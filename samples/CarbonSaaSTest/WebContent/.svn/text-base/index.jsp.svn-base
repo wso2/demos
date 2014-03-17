@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page import="org.wso2.carbon.context.CarbonContext" %>
+<%@ page import="org.wso2.carbon.user.api.UserRealm" %>
+<%@ page import="org.wso2.carbon.user.api.UserStoreException" %>
+<%@ page import="org.wso2.carbon.context.PrivilegedCarbonContext" %>
+<%@ page import="org.wso2.carbon.core.multitenancy.utils.TenantAxisUtils" %>
+<%@ page import="org.wso2.carbon.user.api.UserRealmService" %>
+<%@ page import="org.wso2.carbon.user.api.TenantManager" %>
+<%@ page import="org.wso2.carbon.core.services.util.CarbonAuthenticationUtil" %>
+<%@ page import="org.wso2.carbon.utils.multitenancy.MultitenantUtils" %>
+<%@ page import="org.wso2.appserver.samples.TenantUtils" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WELCOME</title>
+</head>
+<body>
+	<%
+	String fq_username = request.getRemoteUser();
+	String tenantDomain = MultitenantUtils.getTenantDomain(fq_username);
+	
+	int tenantID = TenantUtils.getTID(tenantDomain);
+
+	session.setAttribute("tenantID", tenantID);
+	session.setAttribute("tenantDomain", tenantDomain);
+	%>
+	
+	<ul>
+		<li><a href="test">login_info</a></li>
+		<li><a href="database">database</a></li>
+		<li><a href="usermgt">usermgt</a></li>
+	</ul>
+</body>
+</html>

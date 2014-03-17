@@ -1,0 +1,58 @@
+<%@page import="org.wso2.appserver.samples.ToolPurchase"%>
+<%@page import="org.wso2.appserver.samples.DBUtils"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Database</title>
+</head>
+<body>
+	<%	
+		int tenantID = (Integer) session.getAttribute("tenantID");
+		String toolID = request.getParameter("toolID");
+		if (toolID != null &&  toolID.trim().length() > 0) {
+			DBUtils.putData(tenantID, toolID);					 	   				
+		} else {
+	%>
+	<p>
+		<b>The tool <%=toolID%> is already purchased.
+		</b>
+	</p>
+	<%
+		}
+	%>
+
+	<form action="index.jsp">
+		<table>
+			<tr>
+				<td>toolID</td>
+				<td><input type="text" name="toolID" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Purchase" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<p>
+		<b>The user list</b>
+	</p>
+	<table>
+		<tr><th>TenantId</th><th>ToolID</th><th>Time</th></tr>
+	<%
+		ToolPurchase[] purchases = DBUtils.getData();
+		for (ToolPurchase purchase : purchases) {
+	%>
+		<tr><td><%=purchase.getTenantID() %></td><td><%=purchase.getToolID() %></td><td><%=purchase.getTime() %></td></tr>
+	<%
+		}
+	%>
+	</table>
+</body>
+</html>

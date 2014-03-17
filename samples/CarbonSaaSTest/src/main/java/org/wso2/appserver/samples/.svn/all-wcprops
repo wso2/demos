@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/repos/wso2/!svn/ver/170626/scratch/supunm/SaasTest/src/main/java/org/wso2/appserver/samples
+END
+DBUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/repos/wso2/!svn/ver/170626/scratch/supunm/SaasTest/src/main/java/org/wso2/appserver/samples/DBUtils.java
+END
+SaaSManagerServlet.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/repos/wso2/!svn/ver/170626/scratch/supunm/SaasTest/src/main/java/org/wso2/appserver/samples/SaaSManagerServlet.java
+END
+ToolPurchase.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/repos/wso2/!svn/ver/170626/scratch/supunm/SaasTest/src/main/java/org/wso2/appserver/samples/ToolPurchase.java
+END
+TenantUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/repos/wso2/!svn/ver/170620/scratch/supunm/SaasTest/src/main/java/org/wso2/appserver/samples/TenantUtils.java
+END

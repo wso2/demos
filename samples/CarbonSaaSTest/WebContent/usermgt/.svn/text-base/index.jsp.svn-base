@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<%@page import="org.wso2.carbon.user.api.UserRealm"%>
+<%@page import="org.wso2.carbon.context.CarbonContext"%>
+<%@page import="org.wso2.carbon.user.api.UserRealmService" %>
+<%@page import="org.wso2.carbon.context.PrivilegedCarbonContext" %>
+<%-- <%@page import="" %> --%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%	
+		int tenantID = (Integer) session.getAttribute("tenantID");
+		String username = request.getParameter("username");
+		String pass = request.getParameter("password");
+		if (username != null && username.trim().length() > 0) {
+		    UserRealmService realmService = (UserRealmService) PrivilegedCarbonContext.getCurrentContext().getOSGiService(UserRealmService.class);			
+			if (!realmService.getTenantUserRealm(tenantID).getUserStoreManager().isExistingUser(username)) {
+				realmService.getTenantUserRealm(tenantID).getUserStoreManager().addUser(username, pass, null, null, null);
+			} else {
+	%>
+	<p>
+		<b>The user <%=username%> already exists
+		</b>
+	</p>
+	<%
+		}
+
+		}
+	%>
+
+	<form action="index.jsp">
+		<table>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="text" name="password" /></td>
+			</tr>
+			<tr>
+				<td colspan="2">&nbsp;</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><input type="submit" value="Add" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<p>
+		<b>The user list</b>
+	</p>
+	<%
+    	UserRealmService realmService = (UserRealmService) PrivilegedCarbonContext.getCurrentContext().getOSGiService(UserRealmService.class);			
+		String[] names = realmService.getTenantUserRealm(tenantID).getUserStoreManager().listUsers("*", 100);
+		for (String name : names) {
+	%><%=name%><br />
+	<%
+		}
+	%>
+</body>
+</html>

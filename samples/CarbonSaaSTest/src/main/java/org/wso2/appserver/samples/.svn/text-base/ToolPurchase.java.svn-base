@@ -1,0 +1,26 @@
+package org.wso2.appserver.samples;
+
+public class ToolPurchase {
+	private int tenantID;
+	private String toolID;
+	private long time;
+	
+	public int getTenantID() {
+		return tenantID;
+	}
+	public void setTenantID(int tenantID) {
+		this.tenantID = tenantID;
+	}
+	public String getToolID() {
+		return toolID;
+	}
+	public void setToolID(String toolID) {
+		this.toolID = toolID;
+	}
+	public long getTime() {
+		return time;
+	}
+	public void setTime(long time) {
+		this.time = time;
+	}
+}
