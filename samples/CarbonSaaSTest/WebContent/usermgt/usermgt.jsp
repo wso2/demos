@@ -31,7 +31,7 @@ if (stAction != null) {
 <%
 CarbonContext cCtx = CarbonContext.getThreadLocalCarbonContext(); 
 String stDomain = cCtx.getTenantDomain();
-UserRealmService realmService = (UserRealmService) PrivilegedCarbonContext.getCurrentContext().getOSGiService(UserRealmService.class);			
+UserRealmService realmService = (UserRealmService) PrivilegedCarbonContext.getThreadLocalCarbonContext().getOSGiService(UserRealmService.class);			
 int tenantID = (Integer) session.getAttribute("tenantID");
 
 String username = request.getParameter("username");
@@ -102,7 +102,7 @@ if (stUser != null) {
 	<p><b>The user list for tenant domain @<%=stDomain%></b></p>
 		<table border=1>
 		<%
-    	realmService = (UserRealmService) PrivilegedCarbonContext.getCurrentContext().getOSGiService(UserRealmService.class);			
+    	realmService = (UserRealmService) PrivilegedCarbonContext.getThreadLocalCarbonContext().getOSGiService(UserRealmService.class);			
 		String[] aUserNames = realmService.getTenantUserRealm(tenantID).getUserStoreManager().listUsers("*", 100);
 		for (String stName : aUserNames) {
 			String[] aUserRoles = realmService.getTenantUserRealm(tenantID).getUserStoreManager().getRoleListOfUser(stName);
