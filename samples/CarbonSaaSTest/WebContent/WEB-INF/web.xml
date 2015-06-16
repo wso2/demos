@@ -2,11 +2,15 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>SaasTest</display-name>
   
+<!--
+         Starting from Carbon 4.3.0 based products, this approach is removed. 
+         You need to define the SaaS rules in META-INF/context.xml. You can 
+         find it in this sample.
   	 <context-param>
   	 	<param-name>carbon.enable.saas</param-name>
         <param-value>*</param-value>
   	 </context-param>
-
+-->
  	<security-constraint>
    				<web-resource-collection>
      					<web-resource-name>Public access</web-resource-name>
