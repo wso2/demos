@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wso2.siddhi:siddhi-extension-math:3.0.6-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/siddhi/siddhi-extension-math/3.0.6-SNAPSHOT/siddhi-extension-math-3.0.6-20160419.193014-61.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/siddhi/siddhi-extension-math/3.0.6-SNAPSHOT/siddhi-extension-math-3.0.6-20160419.193014-61-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/siddhi/siddhi-extension-math/3.0.6-SNAPSHOT/siddhi-extension-math-3.0.6-20160419.193014-61-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/election-siddhi-extensions.iml" filepath="$PROJECT_DIR$/election-siddhi-extensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rssreader/siddhi-extension-RSSReader.iml" filepath="$PROJECT_DIR$/rssreader/siddhi-extension-RSSReader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/worldcloud/siddhi-extension-WorldCloud.iml" filepath="$PROJECT_DIR$/worldcloud/siddhi-extension-WorldCloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fbmensions/siddhi-extension-fbmensions.iml" filepath="$PROJECT_DIR$/fbmensions/siddhi-extension-fbmensions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/popularhtag/siddhi-extension-popularhtag.iml" filepath="$PROJECT_DIR$/popularhtag/siddhi-extension-popularhtag.iml" />
+      <module fileurl="file://$PROJECT_DIR$/popularlist/siddhi-extension-popularlist.iml" filepath="$PROJECT_DIR$/popularlist/siddhi-extension-popularlist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sentiments/siddhi-extension-sentiments.iml" filepath="$PROJECT_DIR$/sentiments/siddhi-extension-sentiments.iml" />
+      <module fileurl="file://$PROJECT_DIR$/topcount/siddhi-extension-topcount.iml" filepath="$PROJECT_DIR$/topcount/siddhi-extension-topcount.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userparty/siddhi-extension-userparty.iml" filepath="$PROJECT_DIR$/userparty/siddhi-extension-userparty.iml" />
+    </modules>
+  </component>
+</project>

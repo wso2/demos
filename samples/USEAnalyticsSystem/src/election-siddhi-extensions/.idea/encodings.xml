@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/fbmensions" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/popularhtag" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/popularlist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rssreader" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sentiments" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/topcount" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userparty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/worldcloud" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

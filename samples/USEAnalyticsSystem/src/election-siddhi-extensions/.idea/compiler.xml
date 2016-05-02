@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-fbmensions" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-fbmensions" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-RSSReader" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-RSSReader" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-userparty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-userparty" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-WorldCloud" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-WorldCloud" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-topcount" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-topcount" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-popularhtag" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-popularhtag" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-sentiments" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-sentiments" />
+      </profile>
+      <profile default="false" name="Annotation profile for siddhi-extension-popularlist" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="siddhi-extension-popularlist" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="election-siddhi-extensions" target="1.6" />
+      <module name="siddhi-extension-fbmensions" target="1.6" />
+      <module name="siddhi-extension-popularhtag" target="1.6" />
+      <module name="siddhi-extension-popularlist" target="1.6" />
+      <module name="siddhi-extension-RSSReader" target="1.6" />
+      <module name="siddhi-extension-sentiments" target="1.6" />
+      <module name="siddhi-extension-topcount" target="1.6" />
+      <module name="siddhi-extension-userparty" target="1.6" />
+      <module name="siddhi-extension-WorldCloud" target="1.6" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
