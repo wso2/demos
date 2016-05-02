@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+extraProperties=sonar.host.url\=http\://localhost\:9000/
+projectKey=org.wso2.siddhi\:siddhi-extension-worldcloudcombined
+serverUrl=http\://localhost\:9000
+version=2
