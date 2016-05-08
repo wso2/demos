@@ -1,0 +1,592 @@
+*,
+*:after,
+*::before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* General styles and layout */
+
+body {
+	background: #fff;
+	color: #666;
+	font-family: 'Lato', Arial, sans-serif;
+}
+
+.container {
+	overflow: hidden;
+	/* we don't want the pseudo-elements sticking out */
+}
+
+.container svg {
+	display: block;
+}
+
+section {
+	position: relative;
+	padding: 5em 5%;
+	background: #f8f8f8;
+	color: #666;
+	text-align: center;
+}
+section.related{
+	background:#555;
+}
+
+.section1{ background: #e0e0e0; }
+.section2{ background: #f8f8f8; }
+.section3{ background: #e0e0e0; }
+
+section h2 {
+	margin: 0;
+	padding: 0;
+	font-size: 2.8em;
+	font-weight: 400;
+}
+section .main-h2{
+/*	text-align:left;*/
+	margin:1em auto;
+}
+section .space{
+	margin-bottom:10em;
+}
+section p {
+	color: rgba(0,0,0,.5);
+	font-size: 1.3em;
+	line-height: 1.5;
+}
+section .active-component{
+    position: fixed;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    margin: 0px;
+    padding: 0.4em;
+    z-index: 100;
+    -webkit-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 8px 1px rgba(0,0,0,0.1);
+}
+
+
+.text:first-child {
+	text-align: right;
+}
+
+.text:nth-child(2) {
+	text-align: left;
+}
+
+.col-2 .column {
+	width: 49%;
+}
+
+.col-3 .column {
+	padding: 0 1%;
+	width: 33%;
+	text-align: center;
+}
+
+.col-2 .full-column,.col-3 .full-column{
+	width: 100%;
+}
+.col-3 .column p {
+	padding: 1.4em;
+}
+
+.column {
+	display: inline-block;
+	vertical-align: top;
+	/*border: 1px solid rgba(0, 0, 0, 0.3);*/
+}
+h4{
+	font-weight:normal;
+	text-align:left;
+}
+.clearfix{
+	clear:both;
+}
+.icon {
+	display: block;
+	width: 2em;
+	height: 2em;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.1);
+	color: #fff;
+	text-align: center;
+	font-size: 8em;
+	line-height: 2em;
+	margin: 0 auto;
+}
+
+section.color h2 {
+	color: #fff;
+}
+
+.color {
+	background: #fff;
+}
+
+/*** Individual section styles and separators ***/
+
+/* Common style for pseudo-elements */
+section::before,
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+/* Triangles */
+.ss-style-triangles::before,
+.ss-style-triangles::after {
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-triangles::before {
+	top: -25px;
+	background: #555;
+}
+
+.ss-style-triangles::after {
+	bottom: -25px;
+	z-index: 10;
+	background: inherit;
+}
+
+/* Double Diagonal line */
+
+.ss-style-doublediagonal {
+	z-index: 1;
+	padding-top: 6em;
+	background: ##e0e0e0;
+}
+
+.ss-style-doublediagonal::before,
+.ss-style-doublediagonal::after {
+	top: 0;
+	left: -25%;
+	z-index: -1;
+	width: 150%;
+	height: 75%;
+	background: inherit;
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.ss-style-doublediagonal::before {
+	height: 50%;
+	background: #ededed;
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	-webkit-transform-origin: 3% 0;
+	transform-origin: 3% 0;
+}
+
+/* Half Circle */
+.ss-style-halfcircle::before,
+.ss-style-halfcircle::after {
+	left: 50%;
+	z-index: 10;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	background: inherit;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.ss-style-halfcircle::before {
+	top: -50px;
+}
+
+.ss-style-halfcircle::after {
+	bottom: -50px;
+}
+
+/* Big Triangle */
+svg#bigTriangleColor {
+	pointer-events: none;
+}
+
+#bigTriangleColor path {
+	fill: #1BA39C;
+	stroke: #1BA39C;
+	stroke-width: 2;
+}
+
+/* Curves */
+#curveUpColor path,
+#curveDownColor path {
+	fill: #3498db;
+	stroke: #3498db;
+}
+
+/* Multiple Triangles */
+.ss-style-multitriangles::before,
+.ss-style-multitriangles::after {
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-multitriangles::before {
+	top: -25px;
+	background: inherit;
+	box-shadow: -50px 50px 0 #f8f8f8, 50px -50px 0 #f8f8f8;
+}
+
+.ss-style-multitriangles::after {
+	bottom: -25px;
+	z-index: 10;
+	background: inherit;
+	box-shadow: -50px 50px 0 #f8f8f8, 50px -50px 0 #f8f8f8;
+}
+
+/* Rounded corners */
+.ss-style-roundedcorners::before {
+	top: 100%;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 60px;
+	border-radius: 0 0 60px 60px;
+	background: inherit;
+}
+
+/* Rounded center split and bottom rounded */
+.ss-style-roundedsplit {
+	padding-top: 7em;
+	border-radius: 0 0 80px 80px;
+}
+
+.ss-style-roundedsplit::before,
+.ss-style-roundedsplit::after {
+	top: -70px;
+	left: 0;
+	z-index: 10;
+	width: 50%;
+	height: 70px;
+	background: inherit;
+}
+
+.ss-style-roundedsplit::before {
+	border-radius: 0 80px 0 0;
+}
+
+.ss-style-roundedsplit::after {
+	left: 50%;
+	border-radius: 80px 0 0 0;
+}
+
+/* Inverted rounded corners */
+.ss-style-invertedrounded {
+	margin-bottom: 90px;
+	padding: 13em 10% 10em;
+	border-radius: 0 0 0 90px;
+}
+
+.ss-style-invertedrounded::before,
+.ss-style-invertedrounded::after {
+	left: 0;
+	z-index: -1;
+	height: 90px;
+	background: #3498db;
+}
+
+.ss-style-invertedrounded::before {
+	top: 100%;
+	width: 100%;
+	border-radius: 0 90px 0 0;
+} 
+
+.ss-style-invertedrounded::after {
+	bottom: 0;
+	z-index: -1;
+	width: 50%;
+}
+
+/* Boxes */
+.ss-style-boxes {
+	padding-top: 4em;
+	padding-bottom: 13em;
+}
+
+.ss-style-boxes::before {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-image: -webkit-gradient(linear, 100% 0, 0 100%, color-stop(0.5, #e0e0e0), color-stop(0.5, #f8f8f8));
+	background-image: linear-gradient(to right, #e0e0e0 50%, #f8f8f8 50%);
+	-webkit-background-size: 130px 100%;
+	background-size: 130px 100%;
+}
+
+/* Zig Zag (3d up and simple down) */
+.ss-style-zigzag::before,
+.ss-style-zigzag::after {
+    right: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    height: 90px;
+    background-size: 50px 100%;
+  }
+
+.ss-style-zigzag::before {
+	top: -90px;
+	background-image: -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, transparent), color-stop(0.25, #3498db));
+	background-image:
+		linear-gradient(315deg, #3093d5 25%, transparent 25%),
+		linear-gradient( 45deg, #3498db 25%, transparent 25%);
+	background-position: 50%;
+}
+
+.ss-style-zigzag::after {
+	top: 100%;
+	background-image: -webkit-gradient(linear, 0 0, 300% 100%, color-stop(0.25, #3498db), color-stop(0.25, #2980b9));
+	background-image: 
+		linear-gradient(135deg, #3498db 25%, transparent 25%),
+		linear-gradient(225deg, #3498db 25%, transparent 25%);
+	background-position: 50%;
+}
+
+/* Edges */
+.ss-style-roundedges {
+	padding-bottom: 16em;
+}
+
+.ss-style-roundedges::before,
+.ss-style-roundedges::after {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: #2980b9;
+	top: -100px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.ss-style-roundedges::before {
+	left: -100px;
+}
+
+.ss-style-roundedges::after {
+	right: -100px;
+}
+
+/* Slit */
+.ss-style-slit {
+	padding-top: 5em;
+}
+
+.ss-style-slit::before, 
+.ss-style-slit::after {
+	width: 50.5%;
+	width: -webkit-calc(50% + 10px);
+	width: -moz-calc(50% + 10px);
+	width: calc(50% + 10px);
+	height: 160px;
+	background: #2980b9;
+	top: -160px;
+}
+
+.ss-style-slit::before {
+	left: -20px;
+	-webkit-transform: skewX(10deg);
+	transform: skewX(10deg);
+	box-shadow: -10px -20px #3192d3;
+}
+
+.ss-style-slit::after {
+	right: -20px;
+	-webkit-transform: skewX(-10deg);
+	transform: skewX(-10deg);
+	box-shadow: 10px -20px #3192d3;
+}
+
+/* Big half circle */
+#bigHalfCircle path {
+	fill: #3498db;
+	stroke: #3498db;
+}
+
+/* Big triangle with shadow */
+
+#trianglePath1 {
+	fill: #3498db;
+	stroke: #3498db;
+} 
+
+#trianglePath2 {
+	fill: #2072a7;
+	stroke: #2072a7;
+}
+
+/* Inclined Zig Zag */
+.ss-style-inczigzag::before,
+.ss-style-inczigzag::after {
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-size: 100px 100%;
+}
+
+.ss-style-inczigzag::before {
+	top: 0;
+	background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #2980b9), color-stop(0.5, #3498db));
+	background-image: linear-gradient(15deg, #3498db 50%, #2980b9 50%);
+}
+
+.ss-style-inczigzag::after {
+	bottom: 0;
+	background-image: -webkit-gradient(linear, 0 0, 10% 100%, color-stop(0.5, #3498db), color-stop(0.5, #2980b9));
+	background-image: linear-gradient(15deg, #2980b9 50%, #3498db 50%);
+}
+
+/* Castle */
+.ss-style-castle::before {
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-size: 200px 100%;
+	top: 0;
+	background-image: -webkit-linear-gradient(40deg, #3498db 50%, #2980b9 50%);
+	background-image: linear-gradient(40deg, #3498db 50%, #2980b9 50%);
+}
+
+/* Alternative slit with inner shadow */
+#slitPath1 {
+	fill: #3498db;
+	stroke: red;
+	stroke-width: 0;
+}
+
+#slitPath2, #slitPath3 {
+	fill: #2072a7;
+}
+
+/* Folded corner */
+.ss-style-foldedcorner::before,
+.ss-style-foldedcorner::after {
+	bottom: 0;
+	width: 100px;
+	height: 100px;
+}
+
+.ss-style-foldedcorner::before {
+	right: 0;
+	background-image: -webkit-linear-gradient(top left, #37a2ea 50%, #3498db 50%);
+	background-image: linear-gradient(315deg, #3498db 50%, #37a2ea 50%);
+}
+
+.ss-style-foldedcorner::after {
+	right: 100px;
+	background-image: -webkit-linear-gradient(top left, transparent 50%, #236fa1 50%);
+	background-image: linear-gradient(315deg, #236fa1 50%, transparent 50%);
+}
+
+/* Dots */
+.ss-style-dots::before {
+	bottom: 20px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background: #2072a7;
+	box-shadow: 30px 0 #2072a7, -30px 0 #2072a7;
+}
+
+/* Double Line */
+.ss-style-doubleline::before {
+	bottom: 30px;
+	width: 140px;
+	height: 2px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background: #2072a7;
+	box-shadow: 0 30px 0 #2072a7;
+}
+
+/* Cross */
+.ss-style-cross {
+	padding-bottom: 15em;
+}
+
+.ss-style-cross::before,
+.ss-style-cross::after {
+	background: #2072a7;
+	bottom: 70px;
+	width: 200px;
+	height: 2px;
+	left: 50%;
+	-webkit-transform-origin: 50% 50%;
+	transform-origin: 50% 50%;
+}
+
+.ss-style-cross::before {
+	-webkit-transform: translateX(-50%) rotate(45deg);
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.ss-style-cross::after {
+	-webkit-transform: translateX(-50%) rotate(-45deg);
+	transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Stamp */
+#stamp path {
+	fill: #3498db;
+	stroke: #3498db; /* avoid gap in FF */
+}
+
+/* Clouds */
+#clouds path {
+	fill: #ecf0f1;
+	stroke: #ecf0f1;
+}
+
+/* Media Queries for the layout */
+@media screen and (max-width: 68em) {
+	section {
+		font-size: 80%;
+	}
+}
+
+@media screen and (max-width: 54em) {
+	.column {
+		display: block;
+		width: 100% !important;
+	}
+
+	.text:first-child,
+	.text:nth-child(2) {
+		text-align: center;
+	}
+
+	.icon {
+		margin: 0 auto;
+	}
+
+	.col-2 .column:first-child .icon {
+		margin: 0 auto 50px;
+	}
+
+	.col-2 .column:nth-child(2) .icon {
+		margin: 50px auto 0;
+	}
+}

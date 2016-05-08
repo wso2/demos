@@ -95,11 +95,11 @@ public class WordCloudSlidingWindow extends StreamProcessor {
             rawString = (String) varibleExecutorText.execute(streamEvent);
             String[] wordsArr = rawString.split(" ");
             for (int i = 0; i < wordsArr.length; i++) {
-                if ((topKWindow1 != null) && !(" ".equals(wordsArr[i]))) {
-                    topKWindow1.offer(wordsArr[i].trim().toLowerCase());
+                if ((topKWindow1 != null) && (wordsArr[i].trim()!=null)) {
+                    topKWindow1.offer(wordsArr[i].trim().toUpperCase());
                 }
-                if ((topKWindow2 != null) && !(" ".equals(wordsArr[i]))) {
-                    topKWindow2.offer(wordsArr[i].trim().toLowerCase());
+                if ((topKWindow2 != null) && (wordsArr[i].trim()!=null)) {
+                    topKWindow2.offer(wordsArr[i].trim().toUpperCase());
                 }
             }
             int peekCount = (int) ((topKWindow1.size() < passToOut) ? topKWindow1.size() : passToOut);
