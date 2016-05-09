@@ -1,0 +1,87 @@
+<% 
+   var log = new Log();
+  var data = require('config.json');
+  var db = new Database(data.pmtdb.databaseurl + data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+  try {
+      var result = db.query("SELECT TRUMP,CRUZ,CLINTON,BERNIE,CDate FROM SentimentRate");
+  } catch (e) {
+      log.error("Error fletching data from SentimentRate table in sentimentgrapg.jag " + e.message);
+      db.close() //ToDo:e
+  }
+  var data = [];
+  for (var i in result) { //ToDo:separate function for repeating blocks
+      try {
+          var TrNews = db.query("SELECT " + "TRUMP" + " FROM news where CDate=" + stringify(result[i].CDate));
+      } catch (e) {
+          log.error("Error fletching data from news table TRUMP coloum in sentimentgrapg.jag " + e.message);
+          db.close() //ToDo:;
+      }
+      if (TrNews != null) {
+          var myJson1 = {};
+          myJson1.Date = result[i].CDate;
+          myJson1.Candidate = "TRUMP";
+          myJson1.Rate = result[i]["TRUMP"];
+
+          myJson1.News1 = TrNews[0]["TRUMP"];
+          myJson1.News2 = TrNews[1]["TRUMP"];
+          myJson1.News3 = TrNews[2]["TRUMP"];
+          data.push(myJson1);
+      }
+      try {
+          var ChNews = db.query("SELECT " + "CRUZ" + " FROM news where CDate=" + stringify(result[i].CDate));
+      } catch (e) {
+          log.error("Error fletching data from news table CRUZ coloum in sentimentgrapg.jag " + e.message);
+          db.close();
+      }
+      if (ChNews != null) {
+          var myJson3 = {};
+          myJson3.Date = result[i].CDate;
+
+          myJson3.Candidate = "CRUZ";
+          myJson3.Rate = result[i]["CRUZ"];
+          myJson3.News1 = ChNews[0]["CRUZ"];
+          myJson3.News2 = ChNews[1]["CRUZ"];
+          myJson3.News3 = ChNews[2]["CRUZ"];
+          data.push(myJson3);
+      }
+      try {
+          var ChNews = db.query("SELECT " + "CLINTON" + " FROM news where CDate=" + stringify(result[i].CDate));
+
+      } catch (e) {
+          log.error("Error fletching data from news table CLINTON coloum in sentimentgrapg.jag " + e.message);
+          db.close();
+      }
+
+      if (ChNews != null) {
+          var myJson4 = {};
+          myJson4.Date = result[i].CDate;
+          myJson4.Candidate = "CLINTON";
+          myJson4.Rate = result[i]["CLINTON"];
+          myJson4.News1 = ChNews[0]["CLINTON"];
+          myJson4.News2 = ChNews[1]["CLINTON"];
+          myJson4.News3 = ChNews[2]["CLINTON"];
+          data.push(myJson4);
+      }
+      try {
+          var ChNews = db.query("SELECT " + "BERNIE" + " FROM news where CDate=" + stringify(result[i].CDate));
+
+      } catch (e) {
+          log.error("Error fletching data from news table CLINTON coloum in sentimentgrapg.jag " + e.message);
+
+      } finally {
+          db.close();
+      }
+
+      if (ChNews != null) {
+          var myJson5 = {};
+          myJson5.Date = result[i].CDate;
+          myJson5.Candidate = "BERNIE";
+          myJson5.Rate = result[i]["BERNIE"];
+          myJson5.News1 = ChNews[0]["BERNIE"];
+          myJson5.News2 = ChNews[1]["BERNIE"];
+          myJson5.News3 = ChNews[2]["BERNIE"];
+          data.push(myJson5);
+      }
+  }
+ print(stringify(data)); 
+%>

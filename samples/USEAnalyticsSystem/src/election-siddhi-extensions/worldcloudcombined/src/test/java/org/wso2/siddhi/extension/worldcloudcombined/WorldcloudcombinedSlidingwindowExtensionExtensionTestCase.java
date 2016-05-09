@@ -43,19 +43,19 @@ public class WorldcloudcombinedSlidingwindowExtensionExtensionTestCase {
                 for (Event inEvent : inEvents) {
                     count.incrementAndGet();
                     if (count.get() == 1) {
-                        Assert.assertEquals("very:1;;", inEvent.getData(0).toString().split(",")[0]);
+                        Assert.assertEquals("FAIR:1;;", inEvent.getData(0).toString().split(",")[0]);
                     }
                     if (count.get() == 2) {
 
-                        Assert.assertEquals("of:2;;", inEvent.getData(0).toString().split(",")[0]);
+                        Assert.assertEquals("A:2;;", inEvent.getData(0).toString().split(",")[0]);
                     }
                     if (count.get() == 3) {
 
-                        Assert.assertEquals("of:3;;", inEvent.getData(0).toString().split(",")[0]);
+                        Assert.assertEquals("A:3;;", inEvent.getData(0).toString().split(",")[0]);
                     }
                     if (count.get() == 4) {
 
-                        Assert.assertEquals("of:6;;", inEvent.getData(0).toString().split(",")[0]);
+                        Assert.assertEquals("OF:6;;", inEvent.getData(0).toString().split(",")[0]);
                     }
                     eventArrived = true;
                 }
