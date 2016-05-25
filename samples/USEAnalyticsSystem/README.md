@@ -48,61 +48,62 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 
 	 4.1 **ESB cApp**  
 	    
-	   4.1.1 Start ESB server using following command: `sh ESB_HOME/bin/wso2server.sh`  
-	   4.1.2 Use this url to access ESB Management Console : https://[host_ip]:9450/carbon/  
-	   4.1.3 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
-	        Then, Select _/cApp/USE2016_ESB_cApp_1.0.0.car_ and Upload
+	   	4.1.1 Start ESB server using following command: `sh ESB_HOME/bin/wso2server.sh`  
+	   	4.1.2 Use this url to access ESB Management Console : https://[host_ip]:9450/carbon/  
+	   	4.1.3 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
+	        	Then, Select _/cApp/USE2016_ESB_cApp_1.0.0.car_ and Upload
 	        
 	 4.2 **CEP cApp**  
 	   
-	   4.2.1 Follow the instructions given in _/resources/dropins/CEP_dropins/CEP_Dropins.md_ file
-	   4.2.2 Follow the instructions given in _/resources/lib/CEP_lib/CEP_lib.md_ file 
-	   4.2.3 Start CEP server using following command: `sh CEP_HOME/bin/wso2server.sh ` 
-	   4.2.4 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  
-	   4.2.5 Using left navigation pane go to **Configure > Datasources > Add Datasource**
-	   Add two datasources with the following details:
+	   	4.2.1 Follow the instructions given in _/resources/dropins/CEP_dropins/CEP_Dropins.md_ file
+	   	4.2.2 Follow the instructions given in _/resources/lib/CEP_lib/CEP_lib.md_ file 
+	   	4.2.3 Start CEP server using following command: `sh CEP_HOME/bin/wso2server.sh ` 
+	   	4.2.4 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  
+	   	4.2.5 Using left navigation pane go to **Configure > Datasources > Add Datasource**
+	   		Add two datasources with the following details:
 	   
-	   Name:        ELECTIONSYSTEMCEP_DB
-	   Driver:      com.mysql.jdbc.Driver
-	   URL:         jdbc:mysql://localhost:3306/use16_cep_data_db
-	   User Name:   admin
-	   Password:    admin
+	   		Name:        ELECTIONSYSTEMCEP_DB
+	   		Driver:      com.mysql.jdbc.Driver
+	   		URL:         jdbc:mysql://localhost:3306/use16_cep_data_db
+	   		User Name:   admin
+	   		Password:    admin
 	   
-	   Name:        ELECTIONSYSTEMCEP_BACKUP_DB
-       Driver:      com.mysql.jdbc.Driver
-       URL:         jdbc:mysql://localhost:3306/use16_cep_bck_db
-       User Name:   admin
-       Password:    admin
+	   		Name:        ELECTIONSYSTEMCEP_BACKUP_DB
+	   		Driver:      com.mysql.jdbc.Driver
+	   		URL:         jdbc:mysql://localhost:3306/use16_cep_bck_db
+	   		User Name:   admin
+	   		Password:    admin
 	   
-	   4.2.6 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
-             Then, Select _/cApp/USE2016_CEP_cApp_1.0.0.car_ and Upload
+	   	4.2.6 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
+             		Then, Select _/cApp/USE2016_CEP_cApp_1.0.0.car_ and Upload
              	        
 	 4.3 **DAS cApp**  
 	  
-	   4.3.1 Follow the instructions given in _/resources/dropins/DAS_dropins/DAS_Dropins.md_ file 
-	   4.3.2 Follow the instructions given in _/resources/lib/DAS_lib/DAS_lib.md_ file
-	   4.3.3 **Unzip** and copy the content found in _/resources/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_ 
-	   4.3.4 Open the file _DAS_HOME/repository/conf/analytics/rdbms-config.xml_ Change variable **"ENGINE='MyISAM'"** to **"ENGINE='InnoDB'"** in Line 44
-	   4.3.5 Copy and replace the **files** _analytics-datasources.xml_ and _master-datasources.xml_ found in _/resources/das_datasources/_ into the folder _DAS_HOME/repository/conf/datasources/_ 
-	   4.3.6 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_ 
-	   4.3.7 Start DAS server using following command:` sh DAS_HOME/bin/wso2server.sh ` 
-	   4.3.8 Use this url to access DAS Management Console : https://[host_ip]:9443/carbon/   
-	   4.3.9 Using left navigation pane go to **Configure > Datasources > Add Datasource**
-       Add two datasources with the following details:
+	   	4.3.1 Follow the instructions given in _/resources/dropins/DAS_dropins/DAS_Dropins.md_ file  
+	   	4.3.2 Follow the instructions given in _/resources/lib/DAS_lib/DAS_lib.md_ file  
+	   	4.3.3 **Unzip** and copy the content found in _/resources/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_  
+	   	4.3.4 Open the file _DAS_HOME/repository/conf/analytics/rdbms-config.xml_ Change variable **"ENGINE='MyISAM'"** to **"ENGINE='InnoDB'"** in Line 44  
+	   	4.3.5 Copy and replace the **files** _analytics-datasources.xml_ and _master-datasources.xml_ found in _/resources/das_datasources/_ into the folder _DAS_HOME/repository/conf/datasources/_   
+	   	4.3.6 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_   
+	   	4.3.7 Start DAS server using following command:` sh DAS_HOME/bin/wso2server.sh `   
+	   	4.3.8 Use this url to access DAS Management Console : https://[host_ip]:9443/carbon/     
+	   	4.3.9 Using left navigation pane go to **Configure > Datasources > Add Datasource**
+	   
+       			Add two datasources with the following details:
      
-      Name:        ELECTIONSYSTEMDAS_DB
-      Driver:      com.mysql.jdbc.Driver
-      URL:         jdbc:mysql://localhost:3306/use16_cep_data_db
-      User Name:   admin
-      Password:    admin
+      		Name:        ELECTIONSYSTEMDAS_DB  
+      		Driver:      com.mysql.jdbc.Driver  
+      		URL:         jdbc:mysql://localhost:3306/use16_cep_data_db  
+      		User Name:   admin  
+      		Password:    admin  
              	   
-      Name:        ELECTIONSYSTEMDAS_BACKUP_DB
-      Driver:      com.mysql.jdbc.Driver
-      URL:         jdbc:mysql://localhost:3306/use16_cep_bck_db
-      User Name:   admin
-      Password:    admin
+      		Name:        ELECTIONSYSTEMDAS_BACKUP_DB  
+      		Driver:      com.mysql.jdbc.Driver  
+      		URL:         jdbc:mysql://localhost:3306/use16_cep_bck_db  
+      		User Name:   admin  
+      		Password:    admin  
        
-	   4.3.10 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
+	   	4.3.10 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
                     Then, Select _/cApp/USE2016_DAS_cApp_1.0.0.car_ and Upload
 
 5. Customize Extensions(if needed any additional functionalities)  
