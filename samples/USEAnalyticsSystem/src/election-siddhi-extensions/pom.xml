@@ -16,10 +16,11 @@
   ~ specific language governing permissions and limitations
   ~ under the License.
   -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
- <groupId>org.wso2.siddhi</groupId>
+    <groupId>org.wso2.siddhi</groupId>
     <artifactId>election-siddhi-extensions</artifactId>
     <packaging>pom</packaging>
     <version>3.0.6-SNAPSHOT</version>
@@ -30,13 +31,13 @@
         <module>userparty</module>
         <module>sentiments</module>
         <module>rssreader</module>
-        <module>worldcloud</module>
-	<module>popularhtag</module>
-        <module>fbmensions</module>
+        <module>wordcloud</module>
+        <module>popularhtag</module>
+        <module>fbmentions</module>
         <module>topcount</module>
-	<module>worldcloudcombined</module>
-     </modules>
- <dependencyManagement>
+        <module>wordcloudcombined</module>
+    </modules>
+    <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.apache.log4j.wso2</groupId>
@@ -248,7 +249,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-     <repositories>
+    <repositories>
         <repository>
             <id>wso2-nexus</id>
             <name>WSO2 internal Repository</name>
@@ -260,7 +261,7 @@
             </releases>
         </repository>
     </repositories>
-<build>
+    <build>
         <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>

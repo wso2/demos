@@ -4,9 +4,7 @@
     <facet type="Osmorc" name="OSGi">
       <configuration manifestGenerationMode="OsmorcControlled" manifestLocation="" jarfileLocation="siddhi-extension-popularhtag-3.0.6-SNAPSHOT.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="siddhi-extension-popularhtag" bundleVersion="3.0.6.SNAPSHOT" ignoreFilePattern="" useProjectDefaultManifestFileLocation="true" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties>
-          <property key="Bundle-Description" value="Siddhi, high performing Complex Event Processing Engine" />
-          <property key="Bundle-Vendor" value="WSO2" />
-          <property key="Bundle-DocURL" value="http://www.wso2.org/" />
+          <property key="Bundle-Description" value="us electionsystem" />
           <property key="Bundle-Name" value="siddhi-extension-popularhtag" />
           <property key="Export-Package" value="org.wso2.siddhi.extension.popularhtag,org.wso2.siddhi.extension.popularhtag.*" />
           <property key="Import-Package" value="*;resolution:=optional" />
@@ -23,10 +21,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/target/maven-shared-archive-resources" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/target/maven-shared-archive-resources" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/generated-sources" />
       <excludeFolder url="file://$MODULE_DIR$/target/generated-test-sources" />
@@ -37,31 +34,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-core:3.0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-query-compiler:3.0.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.mvel:mvel2:2.2.1.Final" level="project" />
-    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.5.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.12" level="project" />
-    <orderEntry type="library" name="Maven: org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:19.0" level="project" />
-    <orderEntry type="library" name="Maven: org.quartz-scheduler.wso2:quartz:2.1.1.wso2v1" level="project" />
-    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.1.1" level="project" />
-    <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
     <orderEntry type="library" name="Maven: io.dropwizard.metrics:metrics-core:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-query-api:3.0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-extension-math:3.0.6-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-extension-time:3.0.6-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.log4j.wso2:log4j:1.2.17.wso2v1" level="project" />
-    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.2" level="project" />
-    <orderEntry type="library" name="Maven: gov.nist.math:jama:1.0.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
-    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.8.1" level="project" />
-    <orderEntry type="library" name="Maven: org.json:json:20151123" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
-    <orderEntry type="library" name="Maven: com.clearspring.analytics:stream:2.9.0" level="project" />
-    <orderEntry type="library" name="Maven: it.unimi.dsi:fastutil:6.5.7" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
@@ -307,5 +283,31 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-core:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-query-compiler:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.mvel:mvel2:2.2.1.Final" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-simple:1.7.12" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.orbit.com.lmax:disruptor:3.3.2.wso2v2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:19.0" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler.wso2:quartz:2.1.1.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: org.quartz-scheduler:quartz:2.1.1" level="project" />
+    <orderEntry type="library" name="Maven: c3p0:c3p0:0.9.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-query-api:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-extension-math:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.siddhi:siddhi-extension-time:3.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.log4j.wso2:log4j:1.2.17.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-math3:3.2" level="project" />
+    <orderEntry type="library" name="Maven: gov.nist.math:jama:1.0.3" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.jsoup:jsoup:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20151123" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
+    <orderEntry type="library" name="Maven: com.clearspring.analytics:stream:2.9.0" level="project" />
+    <orderEntry type="library" name="Maven: it.unimi.dsi:fastutil:6.5.7" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
   </component>
 </module>

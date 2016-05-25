@@ -188,8 +188,8 @@ public class TopKTagsExtension extends StreamProcessor {
     @Override
     protected void process(ComplexEventChunk<StreamEvent> streamEventChunk, Processor nextProcessor,
             StreamEventCloner streamEventCloner, ComplexEventPopulater complexEventPopulater) {
-        String rawTagList;
         ComplexEventChunk<StreamEvent> returnEventChunk = new ComplexEventChunk<StreamEvent>();
+        String rawTagList;
         StreamEvent streamEvent = streamEventChunk.getFirst();
         while (streamEventChunk.hasNext()) {
             streamEvent = streamEventChunk.next();

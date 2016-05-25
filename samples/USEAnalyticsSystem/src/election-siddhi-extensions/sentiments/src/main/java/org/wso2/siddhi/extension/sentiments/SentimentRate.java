@@ -1,8 +1,7 @@
 package org.wso2.siddhi.extension.sentiments;
 
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -108,18 +107,19 @@ public class SentimentRate extends FunctionExecutor {
     protected String[] getWordsBuckets(String fileName) throws IOException {
         String[] wordList = null;
         StringBuilder textChunk = new StringBuilder();
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource(fileName).getFile());
-        try {
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
+        try{
+            InputStream in = getClass().getResourceAsStream("/" + fileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+            String line;
+            while ((line = reader.readLine()) != null) {
                 textChunk.append(line).append("\n");
             }
-            scanner.close();
-        } catch (IOException e) {
-            LOGGER.error("Error reading "+fileName+" File");
-        }       
+            in.close();
+        }catch (Exception ex){
+            LOGGER.error("Error Reading " + fileName);
+            ex.printStackTrace();
+        }
         wordList = textChunk.toString().split(",");
         return wordList;
     }
