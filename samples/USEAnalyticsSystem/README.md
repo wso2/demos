@@ -105,6 +105,12 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	   	4.3.9 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
                     Then, Select _/cApp/USE2016_DAS_cApp_1.0.0.car_ and Upload   
 	   	4.3.10 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_   
+		4.3.11 Access the website at _https://10.100.4.110:9443/us-election-analytics/_   
+
+		Note: 	The Community Graph takes around 1 hour to render at initial startup     
+			Media Sentiment Graph is updated every 24 hours     
+			
+
 5. Customize Extensions(if needed any additional functionalities)  
 	 5.1 Download election-siddhi-extensions in src folder  
 	 5.2 Make relevent changes using your desired IDE  
