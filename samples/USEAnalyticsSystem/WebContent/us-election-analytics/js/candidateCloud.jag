@@ -1,0 +1,13 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../wordDBconfig.json');
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT "+Para["Choose"]+" FROM WordCloud where id=1");
+    var data = [];
+    
+        data.push(result);
+  
+    db.close();
+	print(stringify(data));  
+%>

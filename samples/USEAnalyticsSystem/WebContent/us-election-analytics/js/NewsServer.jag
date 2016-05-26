@@ -1,0 +1,18 @@
+<% 
+
+
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT * FROM googleLatestNews");
+    var data = [];
+  var log=new Log();
+    for (var i in result) {
+        var im=result[i].Discription.split("<img");
+	//log.info('<img'+im[1].split("<br>")[0]);
+        //data.push('<li>'+'<img'+im[1].split("<br>")[0]+'<a href="'+result[i].Link+'">'+result[i].text +'</a>'+'- '+result[i].Pub_Date+'</li>');
+	data.push('<li><div class="cNewsBlock"><div class="cNewsImage">'+'<img'+im[1].split("<br>")[0]+'</div> <div class="cNewsInfo"><div class="cNewsTitle"><a href="'+result[i].Link+'">'+result[i].text +'</a></div><div class="cNewsDate"><a href="">'+result[i].Pub_Date+' </a></div></div></div></li>');
+
+    }
+    db.close();
+    print(stringify(data));  
+%>

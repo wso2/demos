@@ -1,6 +1,8 @@
 package org.wso2.siddhi.extension.userparty;
 
 import static java.util.concurrent.TimeUnit.HOURS;
+import static java.util.concurrent.TimeUnit.MINUTES;
+
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -90,7 +92,7 @@ public class UserParty extends StreamProcessor {
             public void run() {
                 writeDB();
             }
-        }, 0, dbWriteScheduleTime, HOURS);
+        }, 0, dbWriteScheduleTime, MINUTES);
 
     }
 
@@ -106,7 +108,7 @@ public class UserParty extends StreamProcessor {
                 DataSource dataSource = executionPlanContext.getSiddhiContext().getSiddhiDataSource(datasourceName);              
                 connection = dataSource.getConnection();
                 connection.setAutoCommit(false);
-                String[] keysArray = (String[]) currentKeys.toArray();
+                Object[] keysArray = currentKeys.toArray();
                 for (int i = 0; i < currentUserChunk.size(); i++) {
                     String query = "select * from tweep where name =?";
                     java.sql.PreparedStatement preStatement = connection.prepareStatement(query);
@@ -169,7 +171,7 @@ public class UserParty extends StreamProcessor {
         while (streamEventChunk.hasNext()) {
             streamEvent = streamEventChunk.next();
             if (currentUserChunk.containsKey((String) variableExpressionURLName.execute(streamEvent))) {
-                if ("T".equals(currentUserChunk.get((String) variableExpressionURLName.execute(streamEvent)))) {
+                if (!"T".equals(currentUserChunk.get((String) variableExpressionURLName.execute(streamEvent)))) {
                     complexEventPopulater.populateComplexEvent(streamEvent, new Object[] { currentUserChunk
                             .get((String) variableExpressionURLName.execute(streamEvent)) });
                     returnEventChunk.add(streamEvent);
@@ -287,8 +289,7 @@ public class UserParty extends StreamProcessor {
                     if (currentUserChunk.containsKey((String) variableExpressionURLName.execute(event))
                             && "T".equals(currentUserChunk.get((String) variableExpressionURLName.execute(event)))) {
                         ((ConcurrentHashMap<String, String>) currentUserChunk).replace(
-                                (String) variableExpressionURLName.execute(event), new String(list.get(0)
-                                        .getCandidateName()));
+                                (String) variableExpressionURLName.execute(event), list.get(0).getCandidateName());
                     }
                     complexEventPopulater.populateComplexEvent(event, new Object[] { list.get(0).getCandidateName(),
                             list.get(0).getCandidateRank() });

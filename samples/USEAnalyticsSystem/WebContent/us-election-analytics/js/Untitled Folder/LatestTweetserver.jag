@@ -1,0 +1,13 @@
+<%
+
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT text,HTags FROM TweetLatest");
+    var data = [];
+    for (var i in result) {
+        data.push("<li><b>"+result[i].text+"</b><br><span>"+"</span><span>"+result[i].HTags +"</span></li>");
+    }
+    db.close();
+    print(stringify(data));
+
+%>

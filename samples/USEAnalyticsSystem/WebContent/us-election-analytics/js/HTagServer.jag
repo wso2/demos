@@ -1,0 +1,16 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT DISTINCT HTag FROM "+Para["Choose"]+"Popular where HTag !=  '#null'");
+
+    var data = [];
+    var test="";
+    for (var i in result) {
+        data.push(result[i].HTag);
+    }
+    db.close();
+	
+     print(stringify(data));
+%>

@@ -1,0 +1,45 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT "+Para["Top"]+","+Para["Second"]+","+Para["Choose"]+",CDate FROM SentimentRate");
+   // var result = db.query("select TRUMP,BERNIE,CLINTON,CDate from SentimentRate");
+    
+    var data = [];
+    var log=new Log();
+    for (var i in result) {
+	var TrNews = db.query("SELECT "+Para["Top"]+" FROM news where CDate="+stringify(result[i].CDate));
+	//log.info(TrNews); 
+	var myJson1 = {};
+	myJson1.Date = result[i].CDate;
+	myJson1.Candidate = Para["Top"];
+	myJson1.Rate = result[i][Para["Top"]];
+	
+	myJson1.News1 = TrNews[0][Para["Top"]];
+	myJson1.News2 = TrNews[1][Para["Top"]];
+	myJson1.News3 = TrNews[2][Para["Top"]];
+        data.push(myJson1);
+	var SeNews = db.query("SELECT "+Para["Second"]+" FROM news where CDate="+stringify(result[i].CDate));
+	var myJson2 = {};
+	myJson2.Date = result[i].CDate;
+	myJson2.Candidate = Para["Second"];
+	myJson2.Rate = result[i][Para["Second"]];
+	myJson2.News1 = SeNews[0][Para["Second"]];
+	myJson2.News2 = SeNews[1][Para["Second"]];
+	myJson2.News3 = SeNews[2][Para["Second"]];
+        data.push(myJson2);
+	var ChNews = db.query("SELECT "+Para["Choose"]+" FROM news where CDate="+stringify(result[i].CDate));
+	var myJson3 = {};
+	myJson3.Date = result[i].CDate;
+	myJson3.Candidate = Para["Choose"];
+	myJson3.Rate = result[i][Para["Choose"]];
+	myJson3.News1 = ChNews[0][Para["Choose"]];
+	myJson3.News2 = ChNews[1][Para["Choose"]];
+	myJson3.News3 = ChNews[2][Para["Choose"]];
+        data.push(myJson3);
+    }
+    db.close();
+	//log.info(data); 
+	print(stringify(data));  
+%>

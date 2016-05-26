@@ -15,60 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `Clouds`
---
-
-DROP TABLE IF EXISTS `Clouds`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Clouds` (
-  `id` int(11) DEFAULT NULL,
-  `TrumpText` text,
-  `ClintonText` text,
-  `CruzText` text,
-  `BernieText` text,
-  KEY `id` (`id`),
-  KEY `id_2` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `Clouds`
---
-
-LOCK TABLES `Clouds` WRITE;
-/*!40000 ALTER TABLE `Clouds` DISABLE KEYS */;
-INSERT INTO `Clouds` VALUES (1,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `Clouds` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `CombinedWordCloud`
---
-
-DROP TABLE IF EXISTS `CombinedWordCloud`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CombinedWordCloud` (
-  `id` int(11) DEFAULT NULL,
-  `TRUMP` text,
-  `CLINTON` text,
-  `BERNIE` text,
-  `CRUZ` text,
-  KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `CombinedWordCloud`
---
-
-LOCK TABLES `CombinedWordCloud` WRITE;
-/*!40000 ALTER TABLE `CombinedWordCloud` DISABLE KEYS */;
-INSERT INTO `CombinedWordCloud` VALUES (1,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `CombinedWordCloud` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `CandidatePopular`
@@ -98,7 +44,7 @@ CREATE TABLE `CandidatePopular` (
 
 LOCK TABLES `CandidatePopular` WRITE;
 /*!40000 ALTER TABLE `CandidatePopular` DISABLE KEYS */;
-INSERT INTO `CandidatePopular` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `CandidatePopular` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,6,NULL,0,0,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `CandidatePopular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,7 +76,7 @@ CREATE TABLE `ElectionPopular` (
 
 LOCK TABLES `ElectionPopular` WRITE;
 /*!40000 ALTER TABLE `ElectionPopular` DISABLE KEYS */;
-INSERT INTO `ElectionPopular` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `ElectionPopular` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL),(NULL,6,NULL,0,0,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `ElectionPopular` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -152,7 +98,7 @@ CREATE TABLE `PopularLinks` (
   `OwnerFull` varchar(200) DEFAULT NULL,
   `RetwitterFullName` varchar(200) DEFAULT NULL,
   `created_at` varchar(100) DEFAULT NULL,
-  `url` varchar(100) DEFAULT NULL,
+  `url` varchar(100000) DEFAULT NULL,
   KEY `count` (`count`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -163,7 +109,7 @@ CREATE TABLE `PopularLinks` (
 
 LOCK TABLES `PopularLinks` WRITE;
 /*!40000 ALTER TABLE `PopularLinks` DISABLE KEYS */;
-INSERT INTO `PopularLinks` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `PopularLinks` VALUES (NULL,1,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,2,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,3,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,4,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,5,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL),(NULL,6,NULL,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `PopularLinks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,10 +122,12 @@ DROP TABLE IF EXISTS `SentimentRate`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `SentimentRate` (
   `CDate` varchar(100) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `TRUMP` double DEFAULT NULL,
   `CLINTON` double DEFAULT NULL,
   `BERNIE` double DEFAULT NULL,
-  `CRUZ` double DEFAULT NULL  
+  `CRUZ` double DEFAULT NULL,
+   PRIMARY KEY (`ID`)  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -193,40 +141,13 @@ LOCK TABLES `SentimentRate` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `TweetLatest`
+-- Table structure for table `WordCloud`
 --
 
-DROP TABLE IF EXISTS `TweetLatest`;
+DROP TABLE IF EXISTS `WordCloud`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `TweetLatest` (
-  `text` varchar(1000) DEFAULT NULL,
-  `Owner` varchar(100) DEFAULT NULL,
-  `ID` varchar(500) NOT NULL,
-  `OwnerFullName` varchar(100) DEFAULT NULL,
-  `HTags` varchar(200) DEFAULT NULL,
-  `created_at` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `TweetLatest`
---
-
-LOCK TABLES `TweetLatest` WRITE;
-/*!40000 ALTER TABLE `TweetLatest` DISABLE KEYS */;
-/*!40000 ALTER TABLE `TweetLatest` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `WorldCloudNew`
---
-
-DROP TABLE IF EXISTS `WorldCloudNew`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `WorldCloudNew` (
+CREATE TABLE `WordCloud` (
   `id` int(11) DEFAULT NULL,
   `TRUMP` text,
   `CLINTON` text,
@@ -237,35 +158,11 @@ CREATE TABLE `WorldCloudNew` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `WorldCloudNew`
+-- Dumping data for table `WordCloud`
 --
-
-LOCK TABLES `WorldCloudNew` WRITE;
-/*!40000 ALTER TABLE `WorldCloudNew` DISABLE KEYS */;
-INSERT INTO `WorldCloudNew` VALUES (1,NULL,NULL,NULL,NULL);
-/*!40000 ALTER TABLE `WorldCloudNew` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `fbmenstions`
---
-
-DROP TABLE IF EXISTS `fbmenstions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `fbmenstions` (
-  `ID` int(11) DEFAULT NULL,
-  `CLINTON` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `fbmenstions`
---
-
-LOCK TABLES `fbmenstions` WRITE;
-/*!40000 ALTER TABLE `fbmenstions` DISABLE KEYS */;
-/*!40000 ALTER TABLE `fbmenstions` ENABLE KEYS */;
+LOCK TABLES `WordCloud` WRITE;
+/*!40000 ALTER TABLE `WordCloud` DISABLE KEYS */;
+/*!40000 ALTER TABLE `WordCloud` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
