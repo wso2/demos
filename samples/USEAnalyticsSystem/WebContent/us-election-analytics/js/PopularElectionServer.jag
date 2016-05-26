@@ -1,0 +1,22 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+   // var result = db.query("SELECT * FROM ElectionPopular");
+    try{
+    var result = db.query("SELECT * FROM ElectionPopular");
+     }catch(e){
+    log.error(e.message);
+    }finally{
+    db.close();
+    }
+    var data = [];
+    for (var i in result) {
+       // data.push(result[i].text);
+	var tt=result[i].text;
+	data.push('<li class="cTwitterCard"><div class="cTwitterCard-header"><div class="avatar"><img class="preserve" src="https://twitter.com/'+result[i].Owner+'/profile_image?size=original" onerror="errorImage(this)"></div><div class="cTwitterInfo"><a class="cTwitterFullName">'+result[i].OwnerFull+'</a><a class="cTwitterUserName">'+'@'+result[i].Owner+'</a></div></div><div class="cTwitterCard-body"><p>'+result[i].text.substring(0,50) + '...'+'</p><a  data-toggle="popover" title="'+result[i].text+'">'+'MORE'+'</a></div></div><div class="cTwitterCard-Bottom"><div class="retweet"><div class="icon-heart"><span>'+result[i].Ft+'</span></div></div><div class="retweet2"><div class="icon-retweet"><span>'+result[i].Rt+'</span></div></div></div></li>');
+    }
+    //db.close();
+	print(stringify(data));  
+%>

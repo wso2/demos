@@ -1,0 +1,16 @@
+<%
+var authenticatingString = "YWRtaW46dXNlckBkYXM=";
+var nodeUrl1 = "https://wso2.com/analytics/tables/NEWELECNODES";
+var edgeUrl1 = "https://wso2.com/analytics/tables/NEWELECEDGES";
+//var EdgeUrl = "https://52.77.25.83:9453/analytics/tables/ELECEDGE";
+var data = {};
+var auth="Basic "+authenticatingString ;
+var header={"Authorization":auth};
+var twitterJson1 = get(NodeUrl,data,header,"jsorn");
+
+print(twitterJson);
+
+
+
+
+%>

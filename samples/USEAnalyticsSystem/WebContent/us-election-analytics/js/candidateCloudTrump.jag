@@ -1,0 +1,13 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../wordDBconfig.json');
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT TRUMP,TRUMP2 FROM WorldCloudNew where id=1");
+    var data = [];
+    
+        data.push(result[0].TRUMP+";"+result[0].TRUMP2);
+  
+    db.close();
+	print(stringify(data));  
+%>

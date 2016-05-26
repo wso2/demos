@@ -1,0 +1,6 @@
+<ElectionDB>
+	<databasename>"use16_das_data_db"</databasename>
+	<databaseurl>"jdbc:mysql://localhost:3306/"</databaseurl>
+	<username>"admin"</username>
+	<password>"admin"</password>
+</ElectionDB>

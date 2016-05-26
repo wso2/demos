@@ -1,0 +1,15 @@
+{
+    "pmtdb": {
+    "username": "admin",
+    "password": "admin",
+    "databasename" : "use16_cep_data_db",
+   "databaseurl" : "jdbc:mysql://localhost:3306/"
+
+    }       
+}
+
+
+
+
+
+

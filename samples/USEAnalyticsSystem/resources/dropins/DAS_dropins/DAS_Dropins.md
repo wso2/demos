@@ -1,5 +1,7 @@
-Build Following extension pom files using `mvn clean install` command and put .jar files into DAS_HOME/repository/components/dropins
-------------------------------------------------------------------------------------------------------------------------------------
+
+1. Unzip and copy .jar file found in _TwitterSentiment.zip_ into _DAS_HOME/repository/components/dropins_
+
+2. Build Following extension pom files using `mvn clean install` command and put .jar files into DAS_HOME/repository/components/dropins
 
 **How To Build An Extension**
 
@@ -11,9 +13,9 @@ to _DAS_HOME/repository/components/dropins_
 <br />
 **Extension Names**
 
-1. userparty
-.jar file to copy: siddhi-extension-userparty-3.0.6-SNAPSHOT.jar
-
-2. topcount
+1. topcount  
 .jar file to copy: siddhi-extension-topcount-3.0.6-SNAPSHOT.jar
+
+
+
 

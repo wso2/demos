@@ -1,0 +1,315 @@
+body.cElection {
+    background-image: url("../images/election-bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center 50%;
+    /*            background-size:100%;*/
+    background-attachment: fixed;
+}
+
+body.cElection h1 , body.cElection h2, body.cElection h3 , body.cBlackSection h1 {
+       font-family: 'Cinzel', serif;
+       text-transform: uppercase;
+}
+.cElection p {
+     font-family: 'Lora', serif;
+/*     font-size: 1.3em;
+     line-height: 1.6em;*/
+}
+.cElectionIntro {
+    padding: 6em 0;
+}
+.cElectionIntro h1 {
+ 
+    font-size: 6.5em;
+    line-height: 0.9em;
+    
+}
+.cElectionIntroRight {
+   
+    font-size: 1.5em;
+}
+.cElectionIntroRight p {
+    padding: 0;
+    margin: 0 0 0.4em 0;
+    color: #000000;
+}
+
+p.cRed {
+    font-size: 2em;
+    color: #be060d;
+    line-height: 1em;
+    font-style: italic;
+}
+
+p.cBlue {
+     font-size: 2em;
+     color: #292f6b;
+      line-height: 1em;
+        font-style: italic;
+}
+
+
+.cElectionIntroBottom {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 3em 3em ;
+}
+.cElectionIntroBottom h2 {
+    text-align: center;
+    color: #ffffff;
+
+}
+.cPartyContainer {
+    padding: 2em;
+    text-align: center;
+}
+.cPartyContainer img {
+    border-radius: 50%;
+    margin-bottom: 1em;
+    border: 1px solid #ffffff;
+}
+.cFirstCandidate img {
+    width: 215px;
+}
+.cPartyContainer .cSecondCandidate img {
+    width: 70%;
+}
+.cPartyContainer.cRepublican {
+      background-color: rgba(190, 6, 13, 0.8);
+}
+.cPartyContainer.cDemocratic  {
+    background-color: rgba(30, 38, 114, 0.8);
+}
+.cPartyContainer h3 {
+
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 0 0 1em 0;
+    width: 100%;
+}
+
+.cPartyContainer p {
+    font-family: 'Cinzel', serif !important;
+}
+
+body p.cCandidateName {
+    font-size: 2em;
+    color: #ffffff;
+    padding: 0;
+    line-height: 0.5em;
+    margin: 0 0 1em 0;
+}
+body p.cCandidateNumbers {
+    font-size: 4.5em;
+    color: #ffffff;
+    padding: 0;
+    line-height: 0.5em;
+    margin: 0 0 1em 0;
+}
+
+.row.cWhiteSection {
+    
+    background-color: transparent;
+    background-image: url("http://b.content.wso2.com/sites/all/advantage-page/images/colored-bg.png");
+    background-position: center center;
+    background-repeat: repeat;
+}
+.row.cWhiteSection h2 {
+    text-align: center;
+}
+.cWhiteSection h3 {
+    text-align: left;
+    font-weight: normal;
+}
+
+.cTwitterContainer {
+    background-color: #ffffff;
+    padding: 2em;
+    display: inline-block;
+    width: 100%;
+}
+.cTitle {
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #a6a6a6;
+    padding: 0.5em;
+        font-family: 'Cinzel', serif;
+}
+.cTitle.cLive {
+    background-color: #619834;
+    color: #ffffff;
+}
+.cTwitterWidgetContainer {
+    min-height: 400px;
+    border: 1px solid #a6a6a6;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+}
+
+.row.cRedSection {
+    background-color: rgba(190, 6, 13, 0.8);
+}
+.row.cRedSection h2 {
+    color: #ffffff;
+    
+}
+.row.cRedSection p {
+    color: #cbb795;
+}
+
+
+.row.cBlueSection {
+    background-color: rgba(30, 38, 114, 0.8);
+}
+.row.cBlueSection h2 {
+    color: #ffffff;
+    text-align: center;
+}
+.row.cBlueSection h3 {
+/*    text-align: center;*/
+    font-weight: normal;
+    color: #ffffff;
+}
+.row.cBlueSection p {
+    color: #cbb795;
+}
+
+.fw-circle {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+.community-graph-legend-container {
+     background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+    padding: 1.5em;
+    
+}
+.community-graph-legend {
+    text-align: center;
+}
+.cBlackSection {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+.cBlackSection h2 {
+    color: #ffffff;
+}
+.cBlackSection .cTxt p {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.6em;
+}
+.cProductLogos , .cTxt {
+    text-align: center;
+    padding: 0.5em;
+}
+
+@media screen and (max-width: 1190px) {
+    .cElectionIntro h1 {
+        font-size: 4.5em;
+    }
+   
+}
+@media screen and (max-width: 990px) {
+    .cElectionIntro h1 {
+    background: black none repeat scroll 0 0;
+    display: inline-block;
+    font-size: 2.5em;
+    line-height: 0.9em;
+    padding: 1.2em 0.3em;
+    color: #ffffff;
+    }
+    .cElectionIntroBottom {
+        padding-top: 2em;
+    }
+    .cElectionIntroRight {
+        margin-bottom: 2em;
+    }
+    .cPartyContainer h3 {
+        font-size: 1.2em;
+    }
+}
+#nt-example1 {
+	margin: auto;
+}
+
+#nt-example1-container {
+	text-align: center;
+}
+
+#nt-example1-container i {
+	font-size: 16px;
+	margin: 8px;
+	cursor: pointer;
+	-webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#nt-example1-container i:hover {
+	color: #333;
+}
+
+#nt-example1 li {
+	color: #4e4e4e;
+	background: #F2F2F2;
+	overflow: hidden;
+	padding: 10px;
+	line-height: 30px;
+	list-style: none;
+	font-size: 14px;
+	text-align: left;
+	border-bottom: 1px dotted #2c8162;
+}
+
+#nt-example1 li:hover {
+	background: #FFF;
+}
+#nt-news {
+        margin: auto;
+}
+
+#nt-news-container {
+        text-align: center;
+}
+
+#nt-news-container i {
+        font-size: 36px;
+        margin: 8px;
+        cursor: pointer;
+        -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#nt-news-container i:hover {
+        color: #333;
+}
+
+#nt-news li {
+        color: #4e4e4e;
+        background: #F2F2F2;
+        overflow: hidden;
+        height: 400px;
+        padding: 10px;
+        line-height: 30px;
+        list-style: none;
+        font-size: 24px;
+        text-align: left;
+        border-bottom: 1px dotted #2c8162;
+}
+
+#nt-news li:hover {
+        background: #FFF;
+}
+

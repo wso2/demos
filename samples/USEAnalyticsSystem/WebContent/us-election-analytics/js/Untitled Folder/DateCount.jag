@@ -1,0 +1,21 @@
+<% 
+
+    var log = new Log();
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT count(CDate) FROM SentimentRate");
+    var data = [];
+    if(parseInt(result[0]["count(CDate)"])>60){
+    }
+    //log.info(stringify(result)); 
+    //log.info(stringify(result[0])); 
+    //log.info(stringify(parseInt(result[0]["count(CDate)"]))); 
+    for (var i in result) {
+	
+        data.push(parseInt(result[0]["count(CDate)"]));
+	
+    }
+    db.close();
+	log.info(data); 
+	print(stringify(data));  
+%>

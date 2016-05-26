@@ -1,0 +1,16 @@
+<%
+
+    var data = require('../config.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT * FROM PopularLinks");
+    var data = [];
+    var log= new Log();
+    for (var i in result) {
+              
+			 
+               data.push('<li style="height:100px"><div class="avatar" style="height:70px;"><img class="preserve" style="height:70px;width:70px" src="'+result[i].imgUrl+'"></div> <div class="bubble-container"><div class="bubble"><div class="retweet"><div class="icon-heart"><span>'+result[i].Ft+'</span></div></div><div class="retweet2"><div class="icon-retweet"><span>'+result[i].Rt+'</span></div></div> <h4 class="twitter-name"><a href="'+result[i].url+'">'+result[i].text+'</a></h4><br><div class="twitter-text">'+result[i].url+'</div></div></div></li>');
+    }
+    db.close();
+    print(stringify(data));
+
+%>

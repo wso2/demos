@@ -1,0 +1,18 @@
+<% 
+
+    var Para = request.getContent();
+    var data = require('../configDAS.json'); 
+    var db = new Database(data.pmtdb.databaseurl+data.pmtdb.databasename, data.pmtdb.username, data.pmtdb.password);
+    var result = db.query("SELECT Election FROM WorldCloud where id=1");
+   // var result = db.query("select Election from WorldCloud where id=1");
+    
+    var data = [];
+    var log=new Log();
+  
+
+        data.push(result);
+    
+    db.close();
+	//log.info(data); 
+	print(stringify(data));  
+%>

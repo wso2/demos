@@ -10,7 +10,7 @@ Follow the following steps to configure the system on a machine running Ubuntu O
         Install mysql to your local machine running the following command :`sudo apt-get install mysql-server mysql-client` 
             
     2.2 Login to the mysql server as `mysql -u [username] -p` and Create a new mysql user with privileges as follows
-        `CREATE USER 'root'@'localhost' IDENTIFIED BY 'root';`
+        `CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';`
         `GRANT ALL PRIVILEGES ON * . * TO 'root'@'localhost';`
         `FLUSH PRIVILEGES;`
             
@@ -27,11 +27,11 @@ Follow the following steps to configure the system on a machine running Ubuntu O
    		    
     2.5 Logout from mysql using `quit;`
            
-    2.6  Using the terminal _cd_ into the _db_configs_ folder and import the databases using following commands 
-        `mysql -u root -proot  use16_cep_bck_db < use16_cep_bck_db.sql` 
-        `mysql -u root -proot  use16_cep_data_db < use16_cep_data_db.sql`
-        `mysql -u root -proot  use16_das_bck_db < use16_das_bck_db.sql`
-        `mysql -u root -proot  use16_das_data_db < use16_das_data_db.sql`
+    2.6  Using the terminal and _cd_ into the _db_configs_ folder and import the databases using following commands 
+        `mysql -u admin -padmin  use16_cep_bck_db < use16_cep_bck_db.sql` 
+        `mysql -u admin -padmin  use16_cep_data_db < use16_cep_data_db.sql`
+        `mysql -u admin -padmin  use16_das_bck_db < use16_das_bck_db.sql`
+        `mysql -u admin -padmin  use16_das_data_db < use16_das_data_db.sql`
         
 3. Download required WSO2 products 
 
@@ -49,7 +49,7 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	 4.1 **ESB cApp**  
 	    
 	   	4.1.1 Start ESB server using following command: `sh ESB_HOME/bin/wso2server.sh`  
-	   	4.1.2 Use this url to access ESB Management Console : https://[host_ip]:9450/carbon/  
+	   	4.1.2 Use this url to access ESB Management Console : *https://[host_ip]:9450/carbon/* (The default Username is *admin* and Password is *admin*)  
 	   	4.1.3 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
 	        	Then, Select _/cApp/USE2016_ESB_cApp_1.0.0.car_ and Upload
 	        
@@ -58,7 +58,7 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	   	4.2.1 Follow the instructions given in _/resources/dropins/CEP_dropins/CEP_Dropins.md_ file
 	   	4.2.2 Follow the instructions given in _/resources/lib/CEP_lib/CEP_lib.md_ file 
 	   	4.2.3 Start CEP server using following command: `sh CEP_HOME/bin/wso2server.sh ` 
-	   	4.2.4 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  
+	   	4.2.4 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  (The default Username is *admin* and Password is *admin*)  
 	   	4.2.5 Using left navigation pane go to **Configure > Datasources > Add Datasource**
 	   		Add two datasources with the following details:
 	   
@@ -81,31 +81,30 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	  
 	   	4.3.1 Follow the instructions given in _/resources/dropins/DAS_dropins/DAS_Dropins.md_ file  
 	   	4.3.2 Follow the instructions given in _/resources/lib/DAS_lib/DAS_lib.md_ file  
-	   	4.3.3 **Unzip** and copy the content found in _/resources/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_  
+	   	4.3.3 **Unzip** and copy _patche1001, patch1005 and patch9999_ found in _/resources/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_  
 	   	4.3.4 Open the file _DAS_HOME/repository/conf/analytics/rdbms-config.xml_ Change variable **"ENGINE='MyISAM'"** to **"ENGINE='InnoDB'"** in Line 44  
 	   	4.3.5 Copy and replace the **files** _analytics-datasources.xml_ and _master-datasources.xml_ found in _/resources/das_datasources/_ into the folder _DAS_HOME/repository/conf/datasources/_   
-	   	4.3.6 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_   
-	   	4.3.7 Start DAS server using following command:` sh DAS_HOME/bin/wso2server.sh `   
-	   	4.3.8 Use this url to access DAS Management Console : https://[host_ip]:9443/carbon/     
-	   	4.3.9 Using left navigation pane go to **Configure > Datasources > Add Datasource**
+	   	4.3.6 Start DAS server using following command:` sh DAS_HOME/bin/wso2server.sh `   
+	   	4.3.7 Use this url to access DAS Management Console : https://[host_ip]:9443/carbon/ (The default Username is *admin* and Password is *admin*)     
+	   	4.3.8 Using left navigation pane go to **Configure > Datasources > Add Datasource**
 	   
        			Add two datasources with the following details:
      
       		Name:        ELECTIONSYSTEMDAS_DB  
       		Driver:      com.mysql.jdbc.Driver  
-      		URL:         jdbc:mysql://localhost:3306/use16_cep_data_db  
+      		URL:         jdbc:mysql://localhost:3306/use16_das_data_db  
       		User Name:   admin  
       		Password:    admin  
              	   
       		Name:        ELECTIONSYSTEMDAS_BACKUP_DB  
       		Driver:      com.mysql.jdbc.Driver  
-      		URL:         jdbc:mysql://localhost:3306/use16_cep_bck_db  
+      		URL:         jdbc:mysql://localhost:3306/use16_das_bck_db  
       		User Name:   admin  
       		Password:    admin  
        
-	   	4.3.10 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
-                    Then, Select _/cApp/USE2016_DAS_cApp_1.0.0.car_ and Upload
-
+	   	4.3.9 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
+                    Then, Select _/cApp/USE2016_DAS_cApp_1.0.0.car_ and Upload   
+	   	4.3.10 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_   
 5. Customize Extensions(if needed any additional functionalities)  
 	 5.1 Download election-siddhi-extensions in src folder  
 	 5.2 Make relevent changes using your desired IDE  

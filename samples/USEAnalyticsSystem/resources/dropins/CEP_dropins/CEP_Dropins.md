@@ -11,14 +11,14 @@ to _CEP_HOME/repository/components/dropins_
 <br />
 **Extension Names**
 
-1. popularlist
+1. popularlist  
 .jar file to copy: siddhi-extension-popularlist-3.0.6-SNAPSHOT.jar
 
-2. rssreader
+2. rssreader  
 .jar file to copy: siddhi-extension-rssreader-3.0.6-SNAPSHOT.jar
 
-3. sentiments
+3. sentiments  
 .jar file to copy: siddhi-extension-sentiments-3.0.6-SNAPSHOT.jar
 
-4. wordcloud
+4. wordcloud  
 .jar file to copy: siddhi-extension-wordcloud-3.0.6-SNAPSHOT.jar

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>ELECTION MONITOR 2016 - BLOGS</title>
+        <meta name="robots" content="nofollow" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="../css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="../css/icons.css" />
+         <script src="//code.jquery.com/jquery-2.1.0.min.js">jQuery.noConflict();</script>
+	<script src="./js/jquery.newsTicker.min.js" type="text/javascript">jQuery.noConflict();</script>
+ 	 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">jQuery.noConflict();</script> 
+        <!--<link rel="stylesheet" type="text/css" href="fonts/font-wso2_1.2/css/font-wso2.css"/>-->
+        <link rel="stylesheet" type="text/css" href="css/component.css" />
+        <!-- Custom css-->
+        <link rel="stylesheet" type="text/css" href="css/custom.css" />
+        <!-- Font WSO2 CSS -->
+        <link href="../libs/font-wso2_1.2/css/font-wso2.css" rel="stylesheet" type="text/css" />
+        <!--Twitter.css-->
+        <link rel="stylesheet" type="text/css" href="css/twitter.css" />
+	<link href="../libs/bootstrap.css" rel="stylesheet">
+        <link href="//cdn.wso2.com/wso2/sites/all/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href='//fonts.googleapis.com/css?family=Cinzel:400,700|Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+        <link href="//c.content.wso2.com/sites/all/common/wso2-common-styles.css" rel="stylesheet" type="text/css" media="all" /> 
+        <link href="//b.content.wso2.com/sites/all/us-election/election-style.css" rel="stylesheet" type="text/css" media="all" />
+   
+         <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-75763718-1', 'auto');
+  ga('send', 'pageview');
+        </script>
+        
+    </head>
+    <body class="cElection cBlogs">
+        <div class="row cHeader">
+            <div class="container">
+                <div class="col-sm-12 col-md-12">
+                    <a href="//wso2.com"><img src="//b.content.wso2.com/sites/all/2015-june-theme/navigation/wso2-nav-logo.png"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="row cElectionIntro" style="padding: 3em 0;">
+            <div class="container">
+
+                <div class="col-sm-12 col-md-12 cElectionIntroLeft" style="padding:0;">
+                    <h1><a href="//wso2.com/election2016">WSO2 <br/>ELECTION<br/>MONITOR</a></h1>
+                    <h2>Blogs</h2>
+                   
+                </div>
+               
+
+
+
+
+
+            </div>
+        </div>
+        <div class="row cWhiteSection">
+            <div class="container">
+                <div class="cBlogContent">
+                    <p class="cDate">March 29</p><a name="monitoring-the-us-election-how-this-works"></a>
+                <h3>Monitoring the US Election: How This Works</h3>
+<!--                <p class="cAuthor">By <a href="#">Error sit voluptatem</a></p>-->
+            
+<p>One thing the whole world is curious about is the 2016 US Election. Our interest is in how this shows up on the Internet – people’s thoughts, opinions, and more.
+</p>
+<p>What we have here is a social media and sentiment analysis site. It listens to prominent hashtags (such as #Election2016), analyzes the tweets, and presents key facts in a form you can digest within a few seconds. It also crawls the Internet for news articles to judge the sentiment of the media towards candidates.
+</p>
+<p>All these done are using the WSO2 Analytics platform. All software components used here are free and open source.
+</p>
+<h4>Democrats or Republicans?</h4>
+<p>This shows how many people talked about each party in the last 24 hours.</p>
+<img src="//b.content.wso2.com/sites/all/us-election/pic1.jpg"/>
+<p>These numbers are Twitter accounts (tweeps). Every second, the WSO2 Enterprise Service Bus (WSO2 ESB) pulls a large number of tweets. Using WSO2 Complex Event Processor (WSO2 CEP), we filter them for unique accounts. Then we examine each tweep’s history of tweeting and calculate which party he/she is biased towards by looking at his most-frequently used “biased hashtags”.
+</p>
+<p>For example, we classify a tweep who has used “#FeelTheBern” more as a Bernie Sanders supporter while we classify a tweep who used “#makeamericagreatagain” as a Donald Trump supporter.  
+</p>
+<p>WSO2 CEP here operates on a 24-hour window, and updates are sent to the site immediately via a WebSocket channel. 
+</p>
+<a name="the-list-of-tweets"></a>
+<h4>The list of tweets</h4>
+<img src="//b.content.wso2.com/sites/all/us-election/pic2.jpg"/>
+<p>Party splits are one metric. We wanted to find out which tweets are really influencing people right now.
+</p>
+
+
+<p>On the left side are the incoming tweets that the ESB collects. Of course, we get a bit more than is displayed here – about 4-5 tweets per second, too fast to be read.
+</p>
+<p>In the middle are the most popular sentiments in the giant #uselection2016 and #election2016 hashtags.
+</p>
+<p>We calculate tweet popularity using a variation of the Hackernews / Reddit algorithms. These are exponential decay equations that rank items by one metric (say, popularity) and also make item ranks drop as each item gets older.
+</p>
+<p>In our adaptation, the basic idea is that each tweet is constantly given a rank, which is proportional to the interactions it receives and inversely proportional to its age. We have tweaked the algorithm to work with high tweet rates. The final equation looks like this:
+</p>
+
+<img src="//b.content.wso2.com/sites/all/us-election/pic7.jpg"/>
+
+<p>Where y and z are constants that push the time window so that no tweet stays in there for more than 10 hours (this changes with tweet popularity).
+</p>
+<p>This model provides the most interesting recent tweets at a given moment. For example, older tweets will be in the top only if they have received lot of interactions. We implement this algorithm in streaming fashion, using WSO2 Complex Event Processor. Any updates are sent to the site via WebSocket immediately. 
+</p>   
+<a name="real-time-word-clouds"></a>
+<h4>Real-time Word Clouds</h4>
+<p>Word clouds show the most frequent words used by the people talking about a given candidate. We show four word clouds using tweets in each candidate's community’s hashtags. </p>
+<img src="//b.content.wso2.com/sites/all/us-election/pic3.jpg"/>
+
+<p>Word clouds shows the most frequent words used by the people talking about a given candidate. We show four-word clouds, one per each candidate, using tweets in each candidate's community’s hashtags.
+</p>
+
+<p>We used <a target="_blank" href="http://www.cs.cmu.edu/~ark/TweetNLP/">Ark Tweet NLP</a> library to select only nouns and adjectives and to remove names – otherwise we end up with often-used words like ‘the’ and ‘Trump’ all the time.
+</p>
+<p>The system updates in real-time. Counting word frequencies require us to keep track of a large number of words, so we’ve used a Count-Min Sketch data structure, which is a probabilistic data structure that can approximate a large number of counters with a relatively small memory footprint. We use the implementation from <a href="https://github.com/addthis/stream-lib" target="">https://github.com/addthis/stream-lib</a>. 
+</p>
+<a name="the-community-graph"></a>
+<h4>The Community Graph</h4>
+
+<p>The community graph is built using retweets. Each node is a tweep and each edge (line) is the number of retweets between two tweeps in the graph. Each node is scaled based on the number of retweets received by the tweep, and colored based on the party affiliations of the user (we explained how that’s done in the ‘Democrats or Republicans’ section).
+</p>
+
+<img src="//b.content.wso2.com/sites/all/us-election/pic4.jpg"/>
+
+<p>
+What this gives us is a graph of who’s getting the most amount of attention on Twitter. The largest nodes are therefore the biggest influencers online.
+                    </p>
+<p>We recalculate this graph once every hour using SparkSQL queries and use the D3.js library to visualize it. Since the graph is very big (and thus noisy), we only include the top 200 influencers in the visualization.  
+</p>      
+        <a name="link-sharing"></a>         
+<h4>Link-Sharing</h4> 
+<img src="//b.content.wso2.com/sites/all/us-election/pic5.jpg"/>
+<p>This section shows most shared links in Twitter in the last 24 hours. When data is pulled, the Twitter API automatically expands the shortened URLs, and we do count the actual URLs present in the tweets coming in. Counting is done using WSO2 CEP and updates are sent to the site via a WebSocket channel as the list changes. </p>
+<a name="media-sentiment-analysis"></a>
+<h4>Media Sentiment Analysis</h4>
+
+<img src="//b.content.wso2.com/sites/all/us-election/pic6.jpg"/>
+
+
+<p>This section maps the media’s changing attitudes towards each candidate. Every six hours, we retrieve the 10 top new stories about each candidate (using Google News). From those articles, we pick sentences that refer to candidates. Then we collapse all of these sentences together and run each word past a list of positive and negative words to generate a score for that day. Sentiment calculation is done using WSO2 CEP. 
+</p>
+<p>Sentiment analysis is very much a field with no clear answers: 100% accuracy is impossible. When building this module, we tried out several sentiment calculating techniques and tools (Stanford CoreNLP, Apache OpenNLP, scored word lists) against manually ranked sentiments of 20 election-related articles. Surprisingly, the word list best approximated a human reaction in this scenario.
+</p>
+<p>This site is an experiment in data, so if you have ideas on how we can improve, do reach out. We welcome comments and criticism alike.
+</p>
+<p>Regards,<br/>
+The WSO2 Election Monitor Team.
+</p>
+                </div>
+            </div>
+        </div>
+ 
+        
+        
+        
+        
+
+
+
+<div class="row cFooter">
+            <div class="container">
+                <div class="col-sm-12 col-md-1 cFooterImage">
+                    <a href="//wso2.com/"><img src="//b.content.wso2.com/sites/all/themes/wso2-v6/images/new-home/home-footer-logo.png"/></a>
+                </div>
+                <div class="col-sm-12 col-md-11 cFooterText">
+                    © 2016 WSO2
+                </div>
+            </div>
+        </div>
+    <!-- /container -->
+    <script type="text/javascript">
+       var nt_example1 = $("#nt-example1").newsTicker({
+            row_height: 120,
+            max_rows: 1,
+            duration: 4000,
+            prevButton: $('#nt-example1-prev'),
+            nextButton: $('#nt-example1-next')
+        })(jQuery);
+    </script>
+ 
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/jquery.bootstrap-dropdown-hover.js"></script>
+    <!--d3 library-->
+    <script src="js/d3/d3.min.js"></script>
+    <script src="js/d3/d3.v3.js"></script>
+    <script src="js/d3/graphlib-dot.js"></script>
+    <script src="js/d3/dagre-d3.js"></script>
+    <script src="js/d3.tip.v0.6.3.js"></script>
+    <script src="js/vega.js"></script>
+    <script src="js/VizGrammar.js"></script>
+
+    <!-- sub JS functions -->
+    <script src="js/PopularList.js"></script>
+    <!--script src="js/renderCommunityGraph.js"></script-->
+    <script src="js/candidateCloud.js"></script>
+    <script src="js/communityGraph.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
+

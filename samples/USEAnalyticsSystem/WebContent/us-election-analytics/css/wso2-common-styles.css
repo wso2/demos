@@ -1,0 +1,161 @@
+/* Global */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 1em; font: inherit; vertical-align: baseline; }
+
+body { font-family: 'Open Sans', sans-serif; font-weight: 400; font-size: 1em; line-height: 1.70em; background-color:#ffffff; }
+
+/*Text styles*/
+p { color: #444444; }
+strong { font-weight: 700; }
+p,  h2, h3, h4, ul, ol { margin: 1em 0; }
+h1 { font-size: 3em; font-weight: 300; font-style: normal; color: #404041; line-height: 1.5em; text-transform: uppercase; margin: 0 0 1em; }
+h2 { font-size: 2.3em; font-weight: 300; font-style: normal; color: #404041; line-height: 1.5em; }
+h3 { font-size: 1.5em; font-weight: 600; font-style: normal; color: #404041; line-height: 1.5em; }
+h4 { font-size: 1.2em; font-weight: 700; font-style: normal; color: #404041; line-height: 1.5em; }
+h5 { font-size: 1.1em; font-weight: 400; font-style: normal; color: #404041; line-height: 1.5em; }
+
+
+/*List styles*/
+ul, ol { padding: 0px 0px 0px 30px; }
+li { padding: .2em 0 0 .5em; }
+ul.cVerticleList { list-style: none; margin: 0px; padding: 0px; }
+ul.cVerticleList li { padding: .7em  0; border-bottom: solid 1px #dddddd;  }
+ul.cVerticleList li.cBottom { border-bottom: 0px; }
+ul.cHorizontalList { list-style: none; padding: 0px; margin: 0px; }
+ul.cHorizontalList li { padding: 0 1em;  position: relative; display: inline-block; border-left: solid 1px #b3b3b3; border-bottom: 0; }
+ul.cHorizontalList li.cLeft { border-left: 0px; padding-left: 0; }
+
+/*Link styles*/
+a { color: #0d6fc4; text-decoration: none;  }
+a:hover { padding-bottom: 0px; border-bottom: solid 1px #f47b20; text-decoration: none; color: #0d6fc4; }
+a:visited { text-decoration: none; }
+a:focus { text-decoration: none; outline: none; color: inherit; }
+a.cBookmark { display: inline-block; position: absolute; margin: -170px 0px 0px; }
+
+/*Image styles*/
+img { max-width: 100%; }
+a:hover img {  }
+.cDiagramMobile { display: none; }
+
+/*Responsive video styles*/
+.responsive-video { position: relative; padding-bottom: 56.25%; padding-top: 60px; overflow: hidden; border: solid 1px #cccccc; }
+.responsive-video iframe, .responsive-video object, .responsive-video embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/*Bootstrap Overide styles*/
+.row { padding: 5em 0; margin-left: 0px; margin-right: 0px; }
+.cBottomRow { margin-bottom: 60px; }
+.jumbotron { background-color: transparent; margin: 0px; padding-left: 0px; }
+.navbar { margin: 0px; }
+.block-title { display: none; }
+
+/*Header styles*/
+.cHeaderSection { padding: 60px 0; }
+
+/*Menu styles*/
+.wso2BootstrapMenu  { position: relative; }
+.wso2BootstrapMenu-content .row { background: transparent !important; }
+.wso2BootstrapMenu-content .row a , .wso2BootstrapMenu-content a { color: #ffffff !important; }
+
+/*Button styles*/
+a.cButtonNormal { cursor: pointer; background-color: #ffffff; font-size: 1em; text-transform: uppercase; border: solid 1px #f47b20; color: #f47b20; border-radius: 5px; padding: .5em 2em; display: inline-block; margin: 0 0 1em; }
+a.cButtonNormal:hover { border: solid 1px #333333; color: #333333; padding: .5em 2em; }
+a.cButtonColored { cursor: pointer; background-color: #f47b20; font-size: 1em; font-weight: 700; text-transform: uppercase; color: #ffffff; border-radius: 5px; padding: .5em 2em; display: inline-block; margin: 0 0 1em; }
+a.cButtonColored:hover { color: #333333; border-bottom: 0px; padding: .5em 2em; }
+.cContactButton { display: inline-block; position: fixed; top: 165px; right: 0; z-index: 999; }
+a.cDownloadButton { font-size: 1.25em; background-image: url(http://b.content.wso2.com/sites/all/common/images/download-arrow.svg); background-position: right -2px; background-repeat: no-repeat; width: 100%; }
+a.cDownloadDatasheet { font-size: 1.2em; color: #0d6fc4; margin: 1em 0 0; display: inline-block; padding: 5px 40px 5px 0px; background-image: url(http://b.content.wso2.com/sites/all/common/images/download-circle.svg); background-position: right 0px; background-repeat: no-repeat; }
+a.cCloudButton { font-size: 1.1em; background-color: #00adee; width: 100%; }
+a.cGitHubButton { font-weight: 700; max-width: 350px; background: #efefef; color: #000000; border-color: #cccccc; border-width: 1px; padding-left: 1.2em; padding-right: 2.5em; border-style: solid; font-size: 1.6em; background-image: url(http://b.content.wso2.com/sites/all/common/images/github-logo.svg); background-position: right 20px top 8px ; background-repeat: no-repeat; width: 100%; background-size: 36px; }
+a.cGitHubButton:hover { font-weight: 700; max-width: 350px; background-color: #f8f8f8; border-color: #cccccc; border-width: 1px;  padding-left: 1.2em; padding-right: 2.5em; border-style: solid; font-size: 1.6em; background-image: url(http://b.content.wso2.com/sites/all/common/images/github-logo.svg); background-position: right 20px top 8px ; background-repeat: no-repeat; width: 100%; background-size: 36px; }
+
+a.cGitHubButtonColored { font-weight: 700; max-width: 350px; background: #f47b20; color: #ffffff; padding-left: 1.2em; padding-right: 2.5em; font-size: 1.6em; background-image: url(http://b.content.wso2.com/sites/all/common/images/github-logo-white.svg); background-position: right 20px top 8px ; background-repeat: no-repeat; width: 100%; background-size: 36px; }
+a.cGitHubButtonColored:hover { font-weight: 700; max-width: 350px; background-color: #f47b20; padding-left: 1.2em; padding-right: 2.5em; font-size: 1.6em; background-image: url(http://b.content.wso2.com/sites/all/common/images/github-logo-white.svg); background-position: right 20px top 8px ; background-repeat: no-repeat; width: 100%; background-size: 36px; }
+
+/*Inner navigation styles*/
+.cInnerNav { background-image: url(http://b.content.wso2.com/sites/all/common/images/inner-nav-separator.png); background-position: center bottom; background-repeat: no-repeat; padding: 0px 0 25px; display: inline-block; width: 100%; z-index: 100; }
+.cInnerNavContent { margin: auto; padding-top: .3em; padding-bottom: .3em }
+
+/*Admin panel styles*/
+.tabs { background-color: #444444; position: fixed; bottom: 0px; top: auto; width: 100%; text-align: center; z-index: 9999; }
+.tabs ul { margin: 0px; padding: 10px 0px; }
+.tabs ul li { position: relative; display: inline-block; padding: 0px 10px; }
+.tabs ul li a { color: #ffffff; }
+.messages { background-color: #cccccc; bottom: 45px; padding: 10px; position: fixed; text-align: center; width: 100%; z-index: 999; }
+
+a.cTopNav { z-index: 999; color: #ffffff; text-decoration: none; padding: 10px 10px 10px 12px; font-weight: 600; font-size: 130%; position: fixed; right: 0px; bottom: 150px; background-color: #333333; border-left: solid 1px #cccccc; border-top: solid 1px #cccccc; border-bottom: solid 1px #cccccc; }
+a.cTopNav:hover { background-color: #666666; }
+
+/*Footer styles*/
+#footer { position: relative; z-index: 999; padding-top: 30px; background-color: #ffffff; }
+
+/*Popup forms*/
+p.cMessage {  }
+
+/*Lightbox styles*/
+.fancybox-custom .fancybox-skin { box-shadow: 0 0 50px #222; }
+
+/*Form styles*/
+.cForm { max-width: 350px; }
+h2.cFormTitle { text-transform: uppercase; margin: .5em 0 0; color: #666666; font-weight: 400; }
+.cFormContent label { font-weight: normal; vertical-align: top; font-size: 80%; }
+.cFormContent label span { color: #ff0000; }
+.cFormContent .cTextfieldstyle , .cFormContent select.cSelect , .cFormContent .cTextarea { padding: 5px 10px; width: 100%; font-size: 1em; }
+.cFormContainer ul { list-style: none; padding: 0; margin: 0; }
+.cFormContainer ul li { padding: 4px 0; list-style: none; }
+.cFormContainer { padding: 0; }
+.first { padding-top: 0px; }
+.cSubmitButton { background-color: #f47b20; border: medium none; color: #ffffff; font-size: 20px; padding: 5px 30px; border-radius: 5px; margin-top: 10px; text-transform: uppercase; font-weight: bold; }
+.cSubmitButton:hover { background-color: #dd5b03; }
+.cFormPadding { padding-right: 0px; }
+.form-error { border: 1px solid red !important; }
+.ui-state-highlight{  border: 1px solid red !important; }
+.ui-widget-content { border: 1px solid #6b4382; background: #6b4382; color: #fff; }
+.label-hidden{ display:none; }
+.cContactButton { display: none; }
+.ui-tooltip.ui-widget.ui-corner-all.ui-widget-content { background: #ffffff; border: 1px solid #dddddd; color: #ff6700; font-size: 14px; box-shadow: none; padding: 5px 10px; border-radius: 0px; }
+      
+/*MENU FIXES*/
+.wso2BootstrapMenu-content a { color: #ffffff !important; }
+
+/*Right CTA Buttons styles*/
+#iRightNavigation {  }
+.cRightButtons { font-weight: 600; display: inline-block; text-transform: uppercase; position: fixed; right: 0; top: 45vH; background-color: #f47b20; border: solid 2px #ffffff; border-right: 0px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; padding: 0 0 0 1em; z-index: 100; }
+#iRightNavigation ul { list-style: none; margin: 0px; padding: 0px; }
+#iRightNavigation ul li { padding: .7em 1em .7em 0; border-bottom: solid 1px #ffffff; }
+#iRightNavigation ul li.cBottom { border-bottom: 0px; }
+#iRightNavigation ul li a { color: #ffffff; }
+#iRightNavigation ul li a:hover { border-bottom: solid 1px #ffffff; }
+#iRightNavigation ul.cSocialMedia li { border-left: 0px; border-bottom: 0px; padding: 0 .1em; }
+#iRightNavigation ul.cSocialMedia li img { width: 30px; }
+
+a.imagelink:hover {
+    border: none;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 1020px) {
+    .cInnerNav { display: none; }
+}
+
+/* Mobile */
+@media screen and (max-width: 800px) {
+    .cContactButton { top: 125px; }
+    .row { padding: 2.5em 0; }
+    .cDiagramMobile { display: block; }
+    .cDiagramScreen { display: none; }
+    
+}
+@media screen and (max-width: 400px) {
+    .cContactButton { display: none; }
+}

@@ -45,7 +45,7 @@ public class WordCloudSlidingWindow extends StreamProcessor {
         topKWindowScheduler.scheduleAtFixedRate(new Runnable() {
             public void run() {
                 topKWindow1 = new CustomConcurrentStreamSummary<String>(maxLength);
-                LOGGER.info("Window 1 start at word cloud exetension");
+                LOGGER.info("Window 1 start at word cloud exetention");
                 if (topKWindow2 != null) {
                     List<ScoredItem<String>> recentEvents = (List<ScoredItem<String>>) topKWindow2
                             .peekWithScores((int) topKWindow2.size());
