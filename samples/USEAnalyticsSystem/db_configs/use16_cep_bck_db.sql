@@ -193,13 +193,13 @@ LOCK TABLES `TweetPopularElection` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `WorldCloud`
+-- Table structure for table `WordCloud`
 --
 
-DROP TABLE IF EXISTS `WorldCloud`;
+DROP TABLE IF EXISTS `WordCloud`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `WorldCloud` (
+CREATE TABLE `WordCloud` (
   `DateTime` varchar(1000) DEFAULT NULL,
   `Election` longtext,
   `TRUMP` longtext,
@@ -213,12 +213,12 @@ CREATE TABLE `WorldCloud` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `WorldCloud`
+-- Dumping data for table `WordCloud`
 --
 
-LOCK TABLES `WorldCloud` WRITE;
-/*!40000 ALTER TABLE `WorldCloud` DISABLE KEYS */;
-/*!40000 ALTER TABLE `WorldCloud` ENABLE KEYS */;
+LOCK TABLES `WordCloud` WRITE;
+/*!40000 ALTER TABLE `WordCloud` DISABLE KEYS */;
+/*!40000 ALTER TABLE `WordCloud` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
