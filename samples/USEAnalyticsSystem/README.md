@@ -55,11 +55,12 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	        
 	 4.2 **CEP cApp**  
 	   
-	   	4.2.1 Follow the instructions given in _/resources/dropins/CEP_dropins/CEP_Dropins.md_ file
-	   	4.2.2 Follow the instructions given in _/resources/lib/CEP_lib/CEP_lib.md_ file 
-	   	4.2.3 Start CEP server using following command: `sh CEP_HOME/bin/wso2server.sh ` 
-	   	4.2.4 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  (The default Username is *admin* and Password is *admin*)  
-	   	4.2.5 Using left navigation pane go to **Configure > Datasources > Add Datasource**
+	   	4.2.1 Follow the instructions given in _/resources/dropins/CEP_dropins/CEP_Dropins.md_ file  
+	   	4.2.2 Follow the instructions given in _/resources/lib/CEP_lib/CEP_lib.md_ file   
+		4.2.3 **Unzip** and copy _patch1001_ folder found in _/resources/patches/CEP_patches/patches.zip_ into the folder _CEP_HOME/repository/components/patches/_  
+	   	4.2.4 Start CEP server using following command: `sh CEP_HOME/bin/wso2server.sh `   
+	   	4.2.5 Use this url to access CEP Management Console : https://[host_ip]:9451/carbon/  (The default Username is *admin* and Password is *admin*)  
+	   	4.2.6 Using left navigation pane go to **Configure > Datasources > Add Datasource**
 	   		Add two datasources with the following details:
 	   
 	   		Name:        ELECTIONSYSTEMCEP_DB
@@ -74,14 +75,14 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	   		User Name:   admin
 	   		Password:    admin
 	   
-	   	4.2.6 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
+	   	4.2.7 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
              		Then, Select _/cApp/USE2016_CEP_cApp_1.0.0.car_ and Upload
              	        
 	 4.3 **DAS cApp**  
 	  
 	   	4.3.1 Follow the instructions given in _/resources/dropins/DAS_dropins/DAS_Dropins.md_ file  
 	   	4.3.2 Follow the instructions given in _/resources/lib/DAS_lib/DAS_lib.md_ file  
-	   	4.3.3 **Unzip** and copy _patche1001, patch1005 and patch9999_ found in _/resources/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_  
+	   	4.3.3 **Unzip** and copy _patch1001, patch1005 and patch9999_ folders found in _/resources/patches/DAS_patches/patches.zip_ into the folder _DAS_HOME/repository/components/patches/_  
 	   	4.3.4 Open the file _DAS_HOME/repository/conf/analytics/rdbms-config.xml_ Change variable **"ENGINE='MyISAM'"** to **"ENGINE='InnoDB'"** in Line 44  
 	   	4.3.5 Copy and replace the **files** _analytics-datasources.xml_ and _master-datasources.xml_ found in _/resources/das_datasources/_ into the folder _DAS_HOME/repository/conf/datasources/_   
 	   	4.3.6 Start DAS server using following command:` sh DAS_HOME/bin/wso2server.sh `   
@@ -105,7 +106,7 @@ Follow the following steps to configure the system on a machine running Ubuntu O
 	   	4.3.9 Using left navigation pane go to **Main > Manage > Carbon Applications > Add**
                     Then, Select _/cApp/USE2016_DAS_cApp_1.0.0.car_ and Upload   
 	   	4.3.10 Copy the **folder** _us-election-analytics_ found in _WebContent_ into _DAS_HOME/repository/deployment/server/jaggeryapps/_   
-		4.3.11 Access the website at _https://10.100.4.110:9443/us-election-analytics/_   
+		4.3.11 Access the website at _https://localhost:9443/us-election-analytics/_   
 
 		Note: 	The Community Graph takes around 1 hour to render at initial startup     
 			Media Sentiment Graph is updated every 24 hours     
